@@ -1,0 +1,323 @@
+.spacing_XS {
+  margin: 8px;
+}
+
+.spacing_SM {
+  margin: 16px;
+}
+
+.spacing_MD {
+  margin: 24px;
+}
+
+.spacing_LG {
+  margin: 32px;
+}
+
+.spacing_XL {
+  margin: 48px;
+}
+
+body {
+  margin: 0;
+}
+
+.header-content {
+  gap: 32px;
+  margin: 0 auto;
+  padding: 16px 32px;
+}
+
+.primary-nav {
+  gap: clamp(16px, 2.5vw, 38px);
+}
+
+.primary-nav a {
+  padding: 12px 0;
+}
+
+.header-actions {
+  gap: 12px;
+}
+
+.header-search {
+  gap: 9px;
+  padding: 0 13px;
+}
+
+.header-search input {
+  padding: 0;
+}
+
+.account-button {
+  padding: 0 23px;
+}
+
+.featured-layout {
+  gap: clamp(24px, 5vw, 68px);
+  margin: 56px auto 32px;
+}
+
+.hero-content h2 {
+  margin: 0 0 8px;
+}
+
+.hero-content p {
+  margin: 0 0 16px;
+}
+
+.hero-button {
+  padding: 9px 16px;
+}
+
+main {
+  margin: 0 auto;
+  padding: 0 32px 48px;
+}
+
+.advertisement {
+  margin: 0 0 22px;
+}
+
+.intro-text {
+  margin: 0 0 28px;
+}
+
+.games-section {
+  padding: 24px 26px 30px;
+}
+
+.section-header {
+  margin-bottom: 18px;
+}
+
+.section-header h2 {
+  margin: 0;
+}
+
+.games {
+  gap: clamp(16px, 2.5vw, 30px);
+}
+
+.game-card img {
+  margin: 10px auto 0;
+}
+
+.game-info {
+  padding: 14px 15px 17px;
+}
+
+.game-info h3 {
+  margin: 0 0 8px;
+}
+
+.game-info p {
+  margin: 0 0 10px;
+}
+
+.game-category {
+  margin-top: auto;
+  padding: 4px 8px;
+}
+
+footer {
+  padding: 34px 32px;
+}
+
+.footer-content {
+  gap: 32px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  gap: 20px;
+}
+
+.carousel {
+  margin: 44px auto 28px;
+}
+
+.featured-label {
+  margin-bottom: 8px;
+}
+
+.carousel-main-overlay h2 {
+  margin: 0 0 14px;
+}
+
+.carousel-details {
+  gap: 9px;
+  padding: 18px 20px;
+}
+
+.carousel-details h3,
+.carousel-details p {
+  margin: 0;
+}
+
+.carousel-thumbnails {
+  gap: 7px;
+}
+
+.carousel-meta {
+  gap: 6px;
+  margin-top: 1px;
+}
+
+.carousel-footer {
+  gap: 8px;
+}
+
+.carousel-meta span {
+  padding: 5px 7px;
+}
+
+.hero-button {
+  padding: 9px 15px;
+}
+
+.carousel-arrow {
+  padding: 0;
+}
+
+.carousel-indicators {
+  gap: 8px;
+}
+
+.carousel-dot {
+  padding: 0;
+}
+
+@media (max-width: 1100px) {
+  .header-content {
+    gap: 14px 24px;
+    padding: 16px 24px;
+  }
+
+  .primary-nav {
+    gap: clamp(22px, 4vw, 38px);
+  }
+}
+
+@media (max-width: 600px) {
+  .header-content {
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .header-search,
+  .header-search input {
+    padding: 0;
+  }
+
+  .header-search:focus-within {
+    padding: 0 10px;
+  }
+
+  .account-button {
+    padding: 0 14px;
+  }
+
+  .primary-nav {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 380px) {
+  .account-button {
+    padding: 0 10px;
+  }
+
+  .primary-nav {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .header-content {
+    gap: 12px 20px;
+    padding: 12px 18px;
+  }
+
+  .primary-nav {
+    gap: 22px;
+  }
+
+  .user-menu {
+    gap: 12px;
+  }
+
+  .subnav {
+    gap: 10px;
+    padding: 12px 18px;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .featured-layout {
+    gap: 12px;
+    margin: 28px 0 22px;
+  }
+
+  main {
+    padding: 0 18px 34px;
+  }
+
+  .games-section {
+    padding: 18px 14px 22px;
+  }
+
+  .games {
+    gap: 16px;
+  }
+
+  .footer-content {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 420px) {
+  .user-menu {
+    gap: 8px;
+  }
+
+  .account-button {
+    padding: 8px 10px;
+  }
+
+  .featured-layout {
+    gap: 8px;
+  }
+
+  .section-header {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 760px) {
+  .carousel {
+    margin: 28px auto 22px;
+  }
+
+  .carousel-details {
+    gap: 8px;
+    padding: 14px 16px;
+  }
+
+  .carousel-thumbnails {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 420px) {
+  .carousel-details {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+}

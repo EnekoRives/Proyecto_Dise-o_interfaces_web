@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "Lexend Deca";
+  src: url("./fuentes/Lexend_Deca/LexendDeca-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("./fuentes/Rubik/Rubik-VariableFont_wght.ttf") format("truetype");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.logo-link,
+.primary-nav a,
+.account-button,
+.hero-button,
+.section-header a,
+.footer-links a {
+  text-decoration: none;
+}
+
+.primary-nav a,
+.header-search input,
+.account-button,
+.hero-button,
+.advertisement,
+.intro-text,
+.section-header a,
+.game-category,
+.footer-links a,
+.carousel-details p,
+.carousel-meta span {
+  font-family: "Rubik", sans-serif;
+}
+
+.primary-nav a {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.primary-nav a.active {
+  font-weight: 600;
+}
+
+.header-search input,
+.account-button {
+  font-size: 13px;
+}
+
+.account-button {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.hero-button {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.advertisement span {
+  font-size: 13px;
+}
+
+.intro-text {
+  font-size: 15px;
+}
+
+.section-header a,
+.footer-links a {
+  font-size: 14px;
+}
+
+.game-info p {
+  line-height: 1.4;
+}
+
+.game-category {
+  font-size: 12px;
+}
+
+.featured-label {
+  font-family: "Rubik", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.carousel-main-overlay h2 {
+  font-size: clamp(23px, 2.4vw, 34px);
+  line-height: 1.12;
+}
+
+.carousel-details h3 {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.carousel-details p {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.carousel-meta span {
+  font-size: 11px;
+}
+
+.carousel-arrow {
+  font-size: 21px;
+}
+
+@media (max-width: 760px) {
+  .primary-nav a {
+    font-size: 13px;
+  }
+
+  .hero-content .cuerpo {
+    font-size: 14px;
+  }
+
+  .carousel-main-overlay h2 {
+    font-size: 24px;
+  }
+
+  .carousel-details h3 {
+    font-size: 16px;
+  }
+
+  .carousel-details p {
+    font-size: 12px;
+  }
+
+  .carousel-arrow {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 600px) {
+  .account-button {
+    font-size: 12px;
+  }
+}
+
+.title {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 40px;
+}
+.subtitle {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 28px;
+}
+.highlight {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 20px;
+}
+
+.cuerpo {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+}
+
+.leyenda {
+  font-family: "Rubik", sans-serif;
+  font-size: 13px;
+}

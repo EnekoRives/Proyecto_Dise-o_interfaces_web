@@ -1,0 +1,259 @@
+:root {
+  --color-primary: #ff733b;
+  --color-primary-hover: #ed622e;
+  --color-primary-hover-alt: #e95f2c;
+  --color-primary-subtle: rgba(255, 115, 59, 0.14);
+  --color-primary-focus: rgb(255 115 59 / 12%);
+  --color-primary-shadow: rgb(255 115 59 / 14%);
+  --color-secondary: #4ecdc4;
+  --color-secondary-subtle: rgb(78 205 196 / 20%);
+  --color-secondary-text: #13312f;
+  --color-page-background: #fcfaf6;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-transparent: transparent;
+  --color-text: #333;
+  --color-header-border: #f0ede8;
+  --color-nav-text: #626579;
+  --color-ink: #303342;
+  --color-border: #e8e3dc;
+  --color-muted: #777b8c;
+  --color-placeholder: #545454;
+  --color-hero-placeholder: #ddd;
+  --color-shadow-hero: rgba(0, 0, 0, 0.64);
+  --color-ad-background: #dedede;
+  --color-ad-text: #555;
+  --color-card-shadow: rgb(48 51 66 / 6%);
+  --color-card-shadow-hover: rgb(48 51 66 / 12%);
+  --color-footer-background: #222;
+  --color-carousel-background: #202a35;
+  --color-carousel-shadow: rgba(0, 0, 0, 0.14);
+  --color-shadow-carousel: rgba(0, 0, 0, 0.78);
+  --color-details-background: #e9e5de;
+  --color-primary-subtle-text: #6b3825;
+  --color-carousel-arrow-background: rgba(0, 0, 0, 0.48);
+}
+
+.primary-color {
+  color: var(--color-primary);
+}
+
+.secondary-color {
+  color: var(--color-secondary);
+}
+
+.primary-background {
+  background-color: var(--color-page-background);
+  color: var(--color-text);
+}
+
+.highlight-background {
+  background-color: var(--color-white);
+}
+
+.title,
+.subtitle,
+.highlight,
+.cuerpo {
+  color: var(--color-black);
+}
+
+.leyenda {
+  color: var(--color-white);
+}
+
+a {
+  color: inherit;
+}
+
+.site-header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-header-border);
+}
+
+.primary-nav a {
+  color: var(--color-nav-text);
+}
+
+.primary-nav a:hover,
+.primary-nav a.active {
+  color: var(--color-ink);
+}
+
+.primary-nav a.active::after {
+  background-color: var(--color-primary);
+}
+
+.primary-nav a:focus-visible,
+.logo-link:focus-visible,
+.account-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+.header-search {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-page-background);
+  color: var(--color-muted);
+}
+
+.header-search input {
+  border: none;
+  outline: none;
+  background: var(--color-transparent);
+  color: var(--color-ink);
+}
+
+.header-search input::placeholder {
+  color: var(--color-placeholder);
+  opacity: 1;
+}
+
+.header-search:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-focus);
+}
+
+.account-button {
+  background-color: var(--color-primary);
+  box-shadow: 0 8px 20px var(--color-primary-shadow);
+  color: var(--color-black);
+}
+
+.account-button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.hero {
+  background: var(--color-hero-placeholder);
+}
+
+.hero::after {
+  background: linear-gradient(
+    var(--color-transparent),
+    var(--color-shadow-hero)
+  );
+}
+
+.hero-content,
+.hero-content h2,
+.hero-content p {
+  color: var(--color-white);
+}
+
+.hero-button {
+  background: var(--color-primary);
+  color: var(--color-black);
+}
+
+.hero-button:hover {
+  background: var(--color-primary-hover-alt);
+}
+
+.advertisement {
+  background: var(--color-ad-background);
+  color: var(--color-ad-text);
+}
+
+.intro-text {
+  color: var(--color-ad-text);
+}
+
+.games-section {
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  box-shadow: 0 8px 24px var(--color-card-shadow);
+}
+
+.section-header a {
+  color: var(--color-primary);
+}
+
+.game-card {
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  box-shadow: 0 4px 14px var(--color-card-shadow);
+}
+
+.game-card:hover {
+  box-shadow: 0 10px 24px var(--color-card-shadow-hover);
+}
+
+.game-category {
+  background: var(--color-secondary-subtle);
+  color: var(--color-secondary-text);
+}
+
+.site-footer {
+  background: var(--color-footer-background);
+  color: var(--color-white);
+}
+
+.site-footer p,
+.footer-links a {
+  color: var(--color-white);
+}
+
+.carousel {
+  background: var(--color-carousel-background);
+  box-shadow: 0 4px 14px var(--color-carousel-shadow);
+}
+
+.carousel-main {
+  background: var(--color-footer-background);
+}
+
+.carousel-main::after {
+  background: linear-gradient(
+    to top,
+    var(--color-shadow-carousel),
+    var(--color-transparent)
+  );
+}
+
+.carousel-main-overlay,
+.featured-label,
+.carousel-main-overlay h2 {
+  color: var(--color-white);
+}
+
+.carousel-details {
+  background: var(--color-details-background);
+  color: var(--color-text);
+}
+
+.carousel-meta span {
+  background: var(--color-primary-subtle);
+  color: var(--color-primary-subtle-text);
+}
+
+.hero-button:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+.carousel-arrow {
+  border: 0;
+  background: var(--color-carousel-arrow-background);
+  color: var(--color-white);
+}
+
+.carousel-arrow:hover {
+  background: var(--color-primary);
+}
+
+.carousel-dot {
+  border: 1px solid var(--color-white);
+  background: var(--color-transparent);
+}
+
+.carousel-dot.active {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+}
+
+@media (max-width: 760px) {
+  .carousel-indicators {
+    background: var(--color-carousel-background);
+  }
+}

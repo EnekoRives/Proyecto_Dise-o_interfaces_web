@@ -1,0 +1,691 @@
+* {
+  box-sizing: border-box;
+}
+
+/* =========================
+        HEADER
+========================= */
+
+.site-header {
+  width: 100%;
+}
+
+.header-content {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+
+  width: 100%;
+  max-width: 1400px;
+  min-height: 96px;
+}
+
+/* Logo */
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header-content .logo {
+  display: block;
+  width: 205px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Navegación */
+
+.primary-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.primary-nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  transition: color 0.2s ease;
+}
+
+.primary-nav a.active::after {
+  position: absolute;
+  right: 25%;
+  bottom: 3px;
+  left: 25%;
+
+  height: 3px;
+  border-radius: 3px;
+  content: "";
+}
+
+.primary-nav a:focus-visible,
+.logo-link:focus-visible,
+.account-button:focus-visible {
+  outline-offset: 4px;
+}
+
+/* Buscador y cuenta */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.header-search {
+  display: flex;
+  align-items: center;
+
+  width: 195px;
+  height: 44px;
+
+  border-radius: 24px;
+}
+
+.search-icon {
+  flex-shrink: 0;
+}
+
+.header-search input {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Botón de crear cuenta */
+
+.account-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  min-height: 48px;
+
+  border-radius: 28px;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.account-button:hover {
+  transform: translateY(-1px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .header-content {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .header-content .logo {
+    width: 185px;
+  }
+
+  .header-actions {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .primary-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-content {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .header-content .logo {
+    width: 145px;
+  }
+
+  .header-actions {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .header-search {
+    width: 42px;
+    height: 42px;
+    justify-content: center;
+  }
+
+  .header-search input {
+    width: 0;
+  }
+
+  .header-search:focus-within {
+    width: min(180px, 45vw);
+    justify-content: flex-start;
+  }
+
+  .header-search:focus-within input {
+    width: 100%;
+  }
+
+  .account-button {
+    min-height: 42px;
+  }
+
+  .primary-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 380px) {
+  .header-content .logo {
+    width: 125px;
+  }
+
+}
+
+/* =========================
+          HERO
+========================= */
+
+.featured-layout {
+  display: grid;
+  grid-template-columns: minmax(40px, 1fr) minmax(0, 7fr) minmax(40px, 1fr);
+  align-items: center;
+  max-width: 1400px;
+  overflow: hidden;
+}
+
+.featured-side {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.hero {
+  position: relative;
+  height: clamp(250px, 34vw, 430px);
+  overflow: hidden;
+}
+
+.hero > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero::after {
+  position: absolute;
+  inset: 35% 0 0;
+  content: "";
+}
+
+.hero-content {
+  position: absolute;
+  z-index: 1;
+  right: 28px;
+  bottom: 24px;
+  left: 28px;
+  max-width: 540px;
+}
+
+.hero-button {
+  display: inline-block;
+  border-radius: 5px;
+}
+
+/* =========================
+         CONTENIDO
+========================= */
+
+main {
+  max-width: 1240px;
+}
+
+.advertisement {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 76px;
+}
+
+.advertisement span {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+}
+
+.advertisement img {
+  width: 36px;
+  height: 24px;
+  object-fit: cover;
+}
+
+.games-section {
+  border-radius: 16px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.games {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 12px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+}
+
+.game-card img {
+  display: block;
+  width: calc(100% - 20px);
+  height: clamp(110px, 15vw, 190px);
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.game-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.game-info p {
+  display: -webkit-box;
+  min-height: 4.2em;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  text-overflow: ellipsis;
+}
+
+.game-category {
+  display: inline-block;
+  align-self: flex-start;
+  border-radius: 999px;
+}
+
+/* =========================
+          FOOTER
+========================= */
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1180px;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* =========================
+        RESPONSIVE
+========================= */
+
+@media (max-width: 760px) {
+  .header-content {
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .primary-nav {
+    order: 3;
+    flex: 1 0 100%;
+    justify-content: flex-start;
+  }
+
+  .subnav {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+  }
+
+  .search {
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .featured-layout {
+    grid-template-columns: 28px minmax(0, 1fr) 28px;
+  }
+
+  .featured-side {
+    height: 130px;
+  }
+
+  .hero {
+    height: 280px;
+  }
+
+  .hero-content {
+    right: 16px;
+    bottom: 15px;
+    left: 16px;
+  }
+
+  .games {
+    grid-template-columns: 1fr;
+  }
+
+  .game-card img {
+    height: 190px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .logo {
+    width: 132px;
+  }
+
+  .featured-layout {
+    grid-template-columns: 16px minmax(0, 1fr) 16px;
+  }
+
+  .featured-side {
+    height: 100px;
+  }
+
+  .hero {
+    height: 250px;
+  }
+
+  .section-header {
+    align-items: flex-start;
+  }
+}
+
+/* =========================
+       CARRUSEL DESTACADO
+========================= */
+
+.carousel {
+  position: relative;
+  width: calc(100% - 48px);
+  max-width: 1120px;
+  height: calc(clamp(300px, 30vw, 390px) + 24px);
+  overflow: hidden;
+}
+
+.carousel-track {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 24px);
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(250px, 1fr);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.45s ease,
+    visibility 0.45s ease;
+}
+
+.carousel-slide.active {
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+}
+
+.carousel-main {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.carousel-main-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-main::after {
+  position: absolute;
+  inset: 35% 0 0;
+  content: "";
+  pointer-events: none;
+}
+
+.carousel-main-overlay {
+  position: absolute;
+  z-index: 1;
+  right: 24px;
+  bottom: 34px;
+  left: 28px;
+}
+
+.featured-label {
+  display: block;
+}
+
+.carousel-details {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.carousel-details h3 {
+  display: -webkit-box;
+  min-height: 2.5em;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  text-overflow: ellipsis;
+}
+
+.carousel-details p {
+  display: -webkit-box;
+  min-height: 2.9em;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  text-overflow: ellipsis;
+}
+
+.carousel-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  min-height: 0;
+}
+
+.carousel-thumbnails img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+}
+
+.carousel-meta {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.carousel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carousel-meta span {
+  border-radius: 999px;
+}
+
+.hero-button {
+  display: inline-block;
+  width: fit-content;
+  border-radius: 4px;
+  transition:
+    background-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-1px);
+}
+
+.hero-button:focus-visible {
+  outline-offset: 3px;
+}
+
+.carousel-arrow {
+  position: absolute;
+  z-index: 3;
+  top: calc((100% - 24px) / 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 50px;
+  transform: translateY(-50%);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.18s ease;
+}
+
+.carousel-prev {
+  left: 8px;
+}
+.carousel-next {
+  right: 8px;
+}
+
+.carousel-indicators {
+  position: absolute;
+  z-index: 4;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 24px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.carousel-dot.active {
+  transform: scale(1.12);
+}
+
+@media (max-width: 760px) {
+  .carousel {
+    width: calc(100% - 28px);
+    height: 582px;
+  }
+
+  .carousel-track {
+    height: 100%;
+  }
+
+  .carousel-slide {
+    grid-template-columns: 1fr;
+    grid-template-rows: 215px 22px minmax(0, 1fr);
+  }
+
+  .carousel-details {
+    grid-row: 3;
+  }
+
+  .carousel-main-overlay {
+    right: 18px;
+    bottom: 24px;
+    left: 20px;
+  }
+
+  .carousel-arrow {
+    top: 107.5px;
+    width: 32px;
+    height: 42px;
+  }
+
+  .carousel-indicators {
+    top: 215px;
+    bottom: auto;
+    width: 100%;
+    height: 22px;
+  }
+
+  .carousel-prev {
+    left: 5px;
+  }
+  .carousel-next {
+    right: 5px;
+  }
+}
+
+@media (max-width: 420px) {
+  .carousel {
+    height: 562px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-slide,
+  .carousel-dot,
+  .carousel-arrow,
+  .hero-button {
+    transition: none;
+  }
+}

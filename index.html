@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mini n Games</title>
+
+    <!-- Hojas de estilo proporcionadas -->
+    <link rel="stylesheet" href="./CSS/fonts.css" />
+    <link rel="stylesheet" href="./CSS/colors.css" />
+    <link rel="stylesheet" href="./CSS/spacing.css" />
+    <link rel="stylesheet" href="./CSS/index.css" />
+  </head>
+
+  <body class="primary-background">
+    <!-- =========================
+     HEADER PRINCIPAL
+========================== -->
+
+    <header class="site-header highlight-background">
+      <div class="header-content">
+        <!-- Logo -->
+        <a href="#" class="logo-link" aria-label="Mini N Games - Inicio">
+          <img src="./img/logo/whiteLogo.png" alt="Mini N Games" class="logo" />
+        </a>
+
+        <!-- Navegación principal -->
+        <nav class="primary-nav" aria-label="Navegación principal">
+          <a href="#" class="active" aria-current="page">Inicio</a>
+          <a href="#">Educativos</a>
+          <a href="#">Puzles</a>
+          <a href="#">Arcade</a>
+          <a href="#">Multijugador</a>
+        </nav>
+
+        <!-- Búsqueda y cuenta -->
+        <div class="header-actions">
+          <form class="header-search" role="search" action="#" method="get">
+            <svg
+              class="search-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="19"
+              height="19"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-4-4"></path>
+            </svg>
+
+            <input
+              type="search"
+              name="q"
+              placeholder="Buscar juegos"
+              aria-label="Buscar juegos"
+            />
+          </form>
+
+          <a href="#" class="account-button">Crear cuenta</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================
+         HERO / JUEGO DESTACADO
+    ========================== -->
+
+    <section class="carousel" aria-label="Juegos destacados">
+      <div class="carousel-track">
+        <!-- Diapositiva 1 -->
+        <article class="carousel-slide active">
+          <div class="carousel-main">
+            <img
+              class="carousel-main-image"
+              src="https://picsum.photos/1200/700?random=10"
+              alt="Paisaje del juego destacado"
+            />
+          </div>
+          <aside class="carousel-details">
+            <h3>Pixel Adventure</h3>
+            <p>Explora mundos pixelados y descubre secretos ocultos.</p>
+            <div class="carousel-thumbnails" aria-label="Imágenes del juego">
+              <img
+                src="https://picsum.photos/420/220?random=11"
+                alt="Escenario de Pixel Adventure, vista 1"
+              />
+              <img
+                src="https://picsum.photos/420/220?random=12"
+                alt="Escenario de Pixel Adventure, vista 2"
+              />
+              <img
+                src="https://picsum.photos/420/220?random=13"
+                alt="Escenario de Pixel Adventure, vista 3"
+              />
+              <img
+                src="https://picsum.photos/420/220?random=14"
+                alt="Escenario de Pixel Adventure, vista 4"
+              />
+            </div>
+            <div class="carousel-footer">
+              <div class="carousel-meta">
+                <span>Aventura</span><span>Independiente</span>
+              </div>
+              <a
+                class="hero-button"
+                href="#"
+                aria-label="Jugar: Pixel Adventure"
+              >
+                Jugar
+              </a>
+            </div>
+          </aside>
+        </article>
+
+        <!-- Diapositiva 2 -->
+        <article class="carousel-slide">
+          <div class="carousel-main">
+            <img
+              class="carousel-main-image"
+              src="https://picsum.photos/1200/700?random=20"
+              alt="Paisaje de aventura"
+            />
+          </div>
+          <aside class="carousel-details">
+            <h3>Space Explorer</h3>
+            <p>Viaja por el espacio y explora planetas desconocidos.</p>
+            <div class="carousel-thumbnails" aria-label="Imágenes del juego">
+              <img
+                src="https://picsum.photos/420/220?random=21"
+                alt="Escenario de Space Explorer, vista 1"
+              />
+              <img
+                src="https://picsum.photos/420/220?random=22"
+                alt="Escenario de Space Explorer, vista 2"
+              />
+              <img
+                src="https://picsum.photos/420/220?random=23"
+                alt="Escenario de Space Explorer, vista 3"
+              />
+              <img
+                src="https://picsum.photos/420/220?random=24"
+                alt="Escenario de Space Explorer, vista 4"
+              />
+            </div>
+            <div class="carousel-footer">
+              <div class="carousel-meta">
+                <span>Exploración</span><span>Un jugador</span>
+              </div>
+              <a
+                class="hero-button"
+                href="#"
+                aria-label="Jugar: Space Explorer"
+              >
+                Jugar
+              </a>
+            </div>
+          </aside>
+        </article>
+
+        <!-- Diapositiva 3 -->
+        <article class="carousel-slide">
+          <div class="carousel-main">
+            <img
+              class="carousel-main-image"
+              src="https://picsum.photos/1200/700?random=30"
+              alt="Escenario de fantasía"
+            />
+          </div>
+          <aside class="carousel-details">
+            <h3>Dungeon Quest</h3>
+            <p>Adéntrate en mazmorras y derrota a poderosos enemigos.</p>
+            <div class="carousel-thumbnails" aria-label="Imágenes del juego">
+              <img
+                src="https://picsum.photos/420/220?random=31"
+                alt="Escenario de Dungeon Quest, vista 1"
+              />
+              <img
+                src="https://picsum.photos/420/220?random=32"
+                alt="Escenario de Dungeon Quest, vista 2"
+              />
+              <img
+                src="https://picsum.photos/420/220?random=33"
+                alt="Escenario de Dungeon Quest, vista 3"
+              />
+              <img
+                src="https://picsum.photos/420/220?random=34"
+                alt="Escenario de Dungeon Quest, vista 4"
+              />
+            </div>
+            <div class="carousel-footer">
+              <div class="carousel-meta">
+                <span>RPG</span><span>Fantasía</span>
+              </div>
+              <a
+                class="hero-button"
+                href="#"
+                aria-label="Jugar: Dungeon Quest"
+              >
+                Jugar
+              </a>
+            </div>
+          </aside>
+        </article>
+      </div>
+
+      <!-- Botones de navegación -->
+      <button
+        class="carousel-arrow carousel-prev"
+        type="button"
+        aria-label="Juego anterior"
+      >
+        &#10094;
+      </button>
+      <button
+        class="carousel-arrow carousel-next"
+        type="button"
+        aria-label="Juego siguiente"
+      >
+        &#10095;
+      </button>
+
+      <!-- Indicadores -->
+      <div class="carousel-indicators" aria-label="Seleccionar juego">
+        <button
+          class="carousel-dot active"
+          type="button"
+          aria-label="Mostrar juego 1"
+          aria-current="true"
+        ></button>
+        <button
+          class="carousel-dot"
+          type="button"
+          aria-label="Mostrar juego 2"
+        ></button>
+        <button
+          class="carousel-dot"
+          type="button"
+          aria-label="Mostrar juego 3"
+        ></button>
+      </div>
+    </section>
+
+    <!-- =========================
+         CONTENIDO
+    ========================== -->
+
+    <main>
+      <aside class="advertisement" aria-label="Publicidad">
+        <span>AD</span>
+        <img src="https://picsum.photos/100/60?random=13" alt="" />
+      </aside>
+
+      <p class="intro-text">
+        Descubre pequeños grandes juegos creados por desarrolladores de todo el
+        mundo.
+      </p>
+
+      <section class="games-section">
+        <div class="section-header">
+          <h2 class="subtitle">Juegos destacados</h2>
+          <a href="#">Ver todos →</a>
+        </div>
+
+        <!-- =========================
+                 TRES JUEGOS
+            ========================== -->
+
+        <div class="games">
+          <!-- Juego 1 -->
+
+          <article class="game-card">
+            <img
+              src="https://picsum.photos/600/400?random=21"
+              alt="Pixel Adventure"
+            />
+
+            <div class="game-info">
+              <h3 class="highlight">Pixel Adventure</h3>
+
+              <p class="cuerpo">
+                Una aventura pixel-art llena de misterios, enemigos y mundos por
+                descubrir.
+              </p>
+
+              <span class="game-category"> Aventura </span>
+            </div>
+          </article>
+
+          <!-- Juego 2 -->
+
+          <article class="game-card">
+            <img
+              src="https://picsum.photos/600/400?random=22"
+              alt="Space Explorer"
+            />
+
+            <div class="game-info">
+              <h3 class="highlight">Space Explorer</h3>
+
+              <p class="cuerpo">
+                Explora planetas desconocidos y descubre los secretos que
+                esconde el espacio.
+              </p>
+
+              <span class="game-category"> Exploración </span>
+            </div>
+          </article>
+
+          <!-- Juego 3 -->
+
+          <article class="game-card">
+            <img
+              src="https://picsum.photos/600/400?random=23"
+              alt="Dungeon Quest"
+            />
+
+            <div class="game-info">
+              <h3 class="highlight">Dungeon Quest</h3>
+
+              <p class="cuerpo">
+                Entra en mazmorras peligrosas, consigue objetos y derrota a
+                poderosos enemigos.
+              </p>
+
+              <span class="game-category"> RPG </span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div>
+          <a href="#" class="logo-link" aria-label="Mini N Games - Inicio">
+            <img
+              src="./img/logo/TransparentBlackLogo.png"
+              alt="Mini N Games"
+              class="logo"
+              style="width: 150px; height: auto"
+            />
+          </a>
+
+          <p class="leyenda">
+            Tu rincón para descubrir pequeños grandes juegos.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#">Sobre nosotros</a>
+          <a href="#">Contacto</a>
+          <a href="#">Privacidad</a>
+          <a href="#">Términos</a>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/carousel.js"></script>
+  </body>
+</html>
