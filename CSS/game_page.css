@@ -1,0 +1,169 @@
+.game-page {
+  width: min(100% - 64px, 1240px);
+  margin: 0 auto;
+  padding: 40px 0 48px;
+}
+
+.game-player-section {
+  margin-bottom: 32px;
+}
+
+.game-title {
+  margin: 0 0 24px;
+}
+
+.game-player {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 700px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-black);
+  box-shadow: 0 8px 24px var(--color-card-shadow);
+}
+
+.game-description-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(200px, 280px);
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.game-description,
+.game-reviews {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-white);
+  box-shadow: 0 8px 24px var(--color-card-shadow);
+}
+
+.game-description h2,
+.game-reviews h2 {
+  margin: 0 0 16px;
+}
+
+.game-description-copy {
+  line-height: 1.6;
+}
+
+.game-description-copy p {
+  margin: 0 0 16px;
+}
+
+.game-description-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.game-gallery {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(88px, 1fr));
+  gap: 16px;
+}
+
+.game-gallery[hidden] {
+  display: none;
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  min-height: 88px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.reviews-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.review-list {
+  display: grid;
+  gap: 16px;
+}
+
+.review-card {
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-page-background);
+}
+
+.review-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.review-card-header h3 {
+  margin: 0;
+}
+
+.review-rating {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  font-family: "Rubik", sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.review-copy {
+  margin: 10px 0 0;
+  line-height: 1.5;
+}
+
+.game-player:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .game-page {
+    width: min(100% - 36px, 1240px);
+    padding: 28px 0 34px;
+  }
+
+  .game-title {
+    margin-bottom: 18px;
+  }
+
+  .game-player-section {
+    margin-bottom: 24px;
+  }
+
+  .game-description-section {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .game-description,
+  .game-reviews {
+    padding: 18px;
+  }
+
+  .game-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto;
+    gap: 12px;
+  }
+
+  .gallery-image {
+    min-height: 90px;
+  }
+}
+
+@media (max-width: 420px) {
+  .game-page {
+    width: calc(100% - 32px);
+  }
+
+  .game-description,
+  .game-reviews {
+    padding: 16px;
+  }
+}
