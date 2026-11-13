@@ -1,11 +1,12 @@
 const gamesList = document.querySelector("#games-list");
+let categoryColors = new Map();
 
 function createGameCard(game) {
   const card = document.createElement("article");
   card.className = "game-card";
 
   const cover = document.createElement("img");
-  cover.src = game.cover;
+  cover.src = window.MiniNGamesPaths.asset(game.cover);
   cover.alt = game.coverAlt;
   cover.loading = "lazy";
 
@@ -15,7 +16,7 @@ function createGameCard(game) {
   const title = document.createElement("h3");
   title.className = "highlight";
   const detailLink = document.createElement("a");
-  detailLink.href = `./BlankGame.html?id=${encodeURIComponent(game.id)}`;
+  detailLink.href = `${window.MiniNGamesPaths.page("BlankGame.html")}?id=${encodeURIComponent(game.id)}`;
   detailLink.textContent = game.title;
   title.append(detailLink);
 
@@ -26,6 +27,11 @@ function createGameCard(game) {
   const category = document.createElement("span");
   category.className = "game-category";
   category.textContent = game.category;
+  window.MiniNGamesCategoryColors.applyBackgroundColor(
+    category,
+    game.category,
+    categoryColors
+  );
 
   info.append(title, description, category);
   card.append(cover, info);
@@ -59,7 +65,10 @@ function isGame(value) {
 
 async function loadGames() {
   try {
-    const response = await fetch("./data/games.json");
+    const [response, loadedCategoryColors] = await Promise.all([
+      fetch(window.MiniNGamesPaths.data("games.json")),
+      window.MiniNGamesCategoryColors.load(),
+    ]);
     if (!response.ok) {
       throw new Error(`No se pudo cargar el catálogo (${response.status}).`);
     }
@@ -68,6 +77,8 @@ async function loadGames() {
     if (!Array.isArray(games) || !games.every(isGame)) {
       throw new Error("El catálogo de juegos tiene un formato no válido.");
     }
+
+    categoryColors = loadedCategoryColors;
 
     if (games.length === 0) {
       const message = document.createElement("p");
@@ -85,7 +96,7 @@ async function loadGames() {
     message.className = "cuerpo";
     message.setAttribute("role", "alert");
     message.textContent =
-      "No se pudo cargar el catálogo. Abre la página con Live Server y revisa data/games.json.";
+      "No se pudo cargar el catálogo. Abre la página con Live Server y revisa data/games.json y data/game_categories.json.";
     gamesList.replaceChildren(message);
   }
 }

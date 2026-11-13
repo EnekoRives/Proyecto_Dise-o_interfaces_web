@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Conoce Mini N Games, un proyecto del grado superior de Mulweb para la asignatura de Diseño de interfaces web."
+    />
+    <title>Sobre nosotros | Mini N Games</title>
+    <link rel="stylesheet" href="../CSS/fonts.css" />
+    <link rel="stylesheet" href="../CSS/colors.css" />
+    <link rel="stylesheet" href="../CSS/spacing.css" />
+    <link rel="stylesheet" href="../CSS/index.css" />
+    <link rel="stylesheet" href="../CSS/privacy.css" />
+  </head>
+
+  <body class="primary-background">
+    <header class="site-header highlight-background">
+      <div class="header-content">
+        <a
+          href="../index.html"
+          class="logo-link"
+          aria-label="Mini N Games - Inicio"
+        >
+          <img src="../img/logo/whiteLogo.png" alt="Mini N Games" class="logo" />
+        </a>
+
+        <nav class="primary-nav" aria-label="Navegación principal">
+          <a href="../index.html">Inicio</a>
+          <a href="./gameBrowser.html">Explorar</a>
+          <a href="./favoritos.html">Favoritos</a>
+          <a href="./cafe.html" class="coffee-button">
+            <span aria-hidden="true">☕</span> Invítame a un café
+          </a>
+        </nav>
+
+        <div class="header-actions">
+          <form
+            class="header-search"
+            role="search"
+            action="./gameBrowser.html"
+            method="get"
+          >
+            <svg
+              class="search-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="19"
+              height="19"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-4-4"></path>
+            </svg>
+            <input
+              type="search"
+              name="q"
+              placeholder="Buscar juegos"
+              aria-label="Buscar juegos"
+            />
+          </form>
+          <a href="./account.html" class="account-button">Iniciar Sesión</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="privacy-page">
+      <article class="privacy-card" aria-labelledby="about-title">
+        <p class="privacy-eyebrow">MINI N GAMES</p>
+        <h1 id="about-title" class="title">Sobre nosotros</h1>
+
+        <div class="privacy-summary">
+          <p>
+            Mini N Games es un proyecto creado para el grado superior de Mulweb,
+            en la asignatura de Diseño de interfaces web.
+          </p>
+        </div>
+
+        <section class="privacy-section" aria-labelledby="project-title">
+          <h2 id="project-title">Un proyecto de aprendizaje</h2>
+          <p>
+            La web se ha desarrollado como parte del trabajo de la asignatura.
+            Su objetivo es aplicar conceptos de diseño y desarrollo de
+            interfaces a una página dedicada a descubrir y explorar juegos.
+          </p>
+        </section>
+
+        <section class="privacy-section" aria-labelledby="site-title">
+          <h2 id="site-title">Qué puedes encontrar aquí</h2>
+          <p>
+            Mini N Games reúne un catálogo de juegos con fichas, imágenes,
+            búsqueda y filtros. También incluye funciones de demostración como
+            cuentas locales, favoritos y reseñas, que se guardan en el navegador
+            y no se sincronizan entre dispositivos.
+          </p>
+        </section>
+
+        <section class="privacy-section" aria-labelledby="scope-title">
+          <h2 id="scope-title">Alcance del proyecto</h2>
+          <p>
+            Esta web tiene fines educativos y es un prototipo. Algunas páginas
+            y funciones son demostrativas y no representan un servicio
+            comercial ni una plataforma de juegos en línea.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div>
+          <a
+            href="../index.html"
+            class="logo-link"
+            aria-label="Mini N Games - Inicio"
+          >
+            <img
+              src="../img/logo/TransparentBlackLogo.png"
+              alt="Mini N Games"
+              class="logo"
+              style="width: 150px; height: auto"
+            />
+          </a>
+          <p class="leyenda">
+            Tu rincón para descubrir pequeños grandes juegos.
+          </p>
+        </div>
+        <nav class="footer-links" aria-label="Enlaces del pie de página">
+          <a href="./sobre-nosotros.html" aria-current="page">Sobre nosotros</a>
+          <a href="./contacto.html">Contacto</a>
+          <a href="./privacidad.html">Privacidad</a>
+          <a href="./terminos.html">Términos</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../js/paths.js"></script>
+    <script src="../js/nav-search.js"></script>
+    <script src="../js/accounts.js"></script>
+  </body>
+</html>

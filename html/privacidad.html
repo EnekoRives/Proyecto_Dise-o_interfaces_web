@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Información sobre los datos que Mini N Games guarda en este navegador y cómo puedes gestionarlos."
+    />
+    <title>Privacidad | Mini N Games</title>
+    <link rel="stylesheet" href="../CSS/fonts.css" />
+    <link rel="stylesheet" href="../CSS/colors.css" />
+    <link rel="stylesheet" href="../CSS/spacing.css" />
+    <link rel="stylesheet" href="../CSS/index.css" />
+    <link rel="stylesheet" href="../CSS/privacy.css" />
+  </head>
+
+  <body class="primary-background">
+    <header class="site-header highlight-background">
+      <div class="header-content">
+        <a
+          href="../index.html"
+          class="logo-link"
+          aria-label="Mini N Games - Inicio"
+        >
+          <img src="../img/logo/whiteLogo.png" alt="Mini N Games" class="logo" />
+        </a>
+
+        <nav class="primary-nav" aria-label="Navegación principal">
+          <a href="../index.html">Inicio</a>
+          <a href="./gameBrowser.html">Explorar</a>
+          <a href="./favoritos.html">Favoritos</a>
+          <a href="./cafe.html" class="coffee-button">
+            <span aria-hidden="true">☕</span> Invítame a un café
+          </a>
+        </nav>
+
+        <div class="header-actions">
+          <form
+            class="header-search"
+            role="search"
+            action="./gameBrowser.html"
+            method="get"
+          >
+            <svg
+              class="search-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="19"
+              height="19"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-4-4"></path>
+            </svg>
+            <input
+              type="search"
+              name="q"
+              placeholder="Buscar juegos"
+              aria-label="Buscar juegos"
+            />
+          </form>
+          <a href="./account.html" class="account-button">Iniciar Sesión</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="privacy-page">
+      <article class="privacy-card" aria-labelledby="privacy-title">
+        <p class="privacy-eyebrow">MINI N GAMES</p>
+        <h1 id="privacy-title" class="title">Política de privacidad</h1>
+        <p class="privacy-updated">Última actualización: 5 de noviembre de 2026</p>
+
+        <div class="privacy-summary">
+          <p>
+            Mini N Games es un prototipo que guarda los datos de cuenta,
+            favoritos y reseñas en el almacenamiento local de tu navegador.
+            Esta versión no los envía a un servidor de la aplicación.
+          </p>
+        </div>
+
+        <section class="privacy-section" aria-labelledby="scope-title">
+          <h2 id="scope-title">1. Alcance de esta política</h2>
+          <p>
+            Esta información describe el funcionamiento actual de la aplicación.
+            No hay un servicio de cuentas en línea: los datos se guardan en el
+            navegador y perfil en los que utilizas la web, y no se sincronizan
+            con otros dispositivos.
+          </p>
+        </section>
+
+        <section class="privacy-section" aria-labelledby="data-title">
+          <h2 id="data-title">2. Datos que se guardan</h2>
+          <ul>
+            <li>
+              <strong>Cuenta:</strong> nombre de usuario y datos técnicos de
+              autenticación. La contraseña no se guarda en texto plano; se
+              almacena una derivación criptográfica con una sal aleatoria.
+            </li>
+            <li>
+              <strong>Sesión:</strong> el identificador de la cuenta activa para
+              mantener la sesión en ese navegador.
+            </li>
+            <li>
+              <strong>Favoritos:</strong> identificadores de los juegos que
+              guardas y el identificador local de tu cuenta.
+            </li>
+            <li>
+              <strong>Reseñas:</strong> nombre de usuario, juego, valoración,
+              comentario y fechas de creación y actualización.
+            </li>
+          </ul>
+          <p>
+            Estos datos se almacenan mediante la función de almacenamiento local
+            (<code>localStorage</code>) del navegador. El catálogo y las
+            categorías se cargan desde archivos de esta misma aplicación.
+          </p>
+        </section>
+
+        <section class="privacy-section" aria-labelledby="purpose-title">
+          <h2 id="purpose-title">3. Para qué se utilizan</h2>
+          <p>
+            Los datos se utilizan únicamente para ofrecer las funciones del
+            prototipo: iniciar tu sesión, mostrar tus favoritos y publicar o
+            editar reseñas dentro de esta instalación de Mini N Games.
+          </p>
+        </section>
+
+        <section class="privacy-section" aria-labelledby="sharing-title">
+          <h2 id="sharing-title">4. Comunicación a terceros</h2>
+          <p>
+            La aplicación no incorpora actualmente herramientas de analítica,
+            publicidad ni seguimiento, y su código no transmite los datos de
+            cuenta, favoritos o reseñas a un servidor. Si accedes a la web desde
+            un servicio de alojamiento, ese proveedor podría tratar datos
+            técnicos de conexión conforme a sus propias condiciones y políticas.
+          </p>
+        </section>
+
+        <section class="privacy-section" aria-labelledby="retention-title">
+          <h2 id="retention-title">5. Conservación y control de tus datos</h2>
+          <p>
+            Los datos permanecen en el navegador hasta que los elimines. Cerrar
+            sesión borra la sesión activa, pero no elimina la cuenta, los
+            favoritos ni las reseñas. Puedes borrar todos los datos guardados
+            por esta web desde los ajustes de privacidad o almacenamiento del
+            navegador; al hacerlo, podrías perderlos de forma permanente.
+          </p>
+        </section>
+
+        <section class="privacy-section" aria-labelledby="security-title">
+          <h2 id="security-title">6. Seguridad y limitaciones</h2>
+          <p>
+            El almacenamiento local está ligado al navegador y no equivale a un
+            servicio seguro de almacenamiento en servidor. Otras personas con
+            acceso a tu perfil del navegador podrían acceder a los datos
+            guardados. Esta versión es un prototipo y no debe utilizarse para
+            información sensible ni para contraseñas que uses en otros servicios.
+          </p>
+        </section>
+
+        <section class="privacy-section" aria-labelledby="changes-title">
+          <h2 id="changes-title">7. Cambios y contacto</h2>
+          <p>
+            Esta política podrá actualizarse si cambian las funciones o el
+            tratamiento de datos. Esta versión del proyecto no publica datos de
+            contacto para consultas de privacidad; antes de utilizar el sitio
+            como servicio público, se deberá identificar al responsable y
+            facilitar un medio de contacto adecuado.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div>
+          <a
+            href="../index.html"
+            class="logo-link"
+            aria-label="Mini N Games - Inicio"
+          >
+            <img
+              src="../img/logo/TransparentBlackLogo.png"
+              alt="Mini N Games"
+              class="logo"
+              style="width: 150px; height: auto"
+            />
+          </a>
+          <p class="leyenda">
+            Tu rincón para descubrir pequeños grandes juegos.
+          </p>
+        </div>
+        <nav class="footer-links" aria-label="Enlaces del pie de página">
+          <a href="./sobre-nosotros.html">Sobre nosotros</a>
+          <a href="./contacto.html">Contacto</a>
+          <a href="./privacidad.html" aria-current="page">Privacidad</a>
+          <a href="./terminos.html">Términos</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../js/paths.js"></script>
+    <script src="../js/nav-search.js"></script>
+    <script src="../js/accounts.js"></script>
+  </body>
+</html>

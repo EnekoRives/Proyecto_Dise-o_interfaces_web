@@ -34,7 +34,8 @@
 .game-category,
 .footer-links a,
 .carousel-details p,
-.carousel-meta span {
+.carousel-meta span,
+.carousel-meta .carousel-category-link {
   font-family: "Rubik", sans-serif;
 }
 
@@ -96,7 +97,7 @@
   line-height: 1.12;
 }
 
-.carousel-details h3 {
+.carousel-details h2 {
   font-family: "Lexend Deca", sans-serif;
   font-size: 18px;
   line-height: 1.25;
@@ -107,7 +108,8 @@
   line-height: 1.45;
 }
 
-.carousel-meta span {
+.carousel-meta span,
+.carousel-meta .carousel-category-link {
   font-size: 11px;
 }
 
@@ -128,7 +130,7 @@
     font-size: 24px;
   }
 
-  .carousel-details h3 {
+  .carousel-details h2 {
     font-size: 16px;
   }
 

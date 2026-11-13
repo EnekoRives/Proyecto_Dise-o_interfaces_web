@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explora el catálogo de Mini N Games, busca juegos por nombre y filtra por categoría, fecha o visitas."
+    />
+    <title>Catálogo de juegos | Mini N Games</title>
+    <link rel="stylesheet" href="../CSS/fonts.css" />
+    <link rel="stylesheet" href="../CSS/colors.css" />
+    <link rel="stylesheet" href="../CSS/spacing.css" />
+    <link rel="stylesheet" href="../CSS/index.css" />
+    <link rel="stylesheet" href="../CSS/gameBrowser.css" />
+  </head>
+
+  <body class="primary-background">
+    <header class="site-header highlight-background">
+      <div class="header-content">
+        <a
+          href="../index.html"
+          class="logo-link"
+          aria-label="Mini N Games - Inicio"
+        >
+          <img src="../img/logo/whiteLogo.png" alt="Mini N Games" class="logo" />
+        </a>
+
+        <nav class="primary-nav" aria-label="Navegación principal">
+          <a href="../index.html">Inicio</a>
+          <a href="./gameBrowser.html" class="active" aria-current="page"
+            >Explorar</a
+          >
+          <a href="./favoritos.html">Favoritos</a>
+          <a href="./cafe.html" class="coffee-button">
+            <span aria-hidden="true">☕</span> Invítame a un café
+          </a>
+        </nav>
+
+        <div class="header-actions">
+          <form
+            class="header-search"
+            role="search"
+            id="game-search-form"
+            action="./gameBrowser.html"
+            method="get"
+          >
+            <svg
+              class="search-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="19"
+              height="19"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-4-4"></path>
+            </svg>
+            <input
+              id="game-search"
+              type="search"
+              name="q"
+              placeholder="Buscar juegos"
+              aria-label="Buscar juegos por nombre o descripción"
+            />
+          </form>
+          <a href="./account.html" class="account-button">Iniciar Sesión</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-browser">
+      <section class="browser-intro" aria-labelledby="browser-title">
+        <p class="browser-eyebrow">CATÁLOGO DE JUEGOS</p>
+        <h1 id="browser-title" class="title">Explora juegos</h1>
+        <p>Encuentra juegos por nombre, categoría, fecha de publicación o popularidad.</p>
+      </section>
+
+      <div class="browser-layout">
+        <aside class="browser-filters" aria-labelledby="filters-title">
+          <div class="filter-heading">
+            <h2 id="filters-title" class="subtitle">Filtros</h2>
+            <button class="filter-reset" id="reset-filters" type="button">
+              Limpiar
+            </button>
+          </div>
+
+          <form id="game-filters">
+            <details class="filter-group category-filter" open>
+              <summary>Categorías</summary>
+              <div id="category-options" class="category-options">
+                <p class="filter-hint" role="status">Cargando categorías...</p>
+              </div>
+            </details>
+
+            <details class="filter-group" open>
+              <summary>Fecha de creación</summary>
+              <label class="filter-field">
+                Desde
+                <input type="date" name="createdFrom" />
+              </label>
+              <label class="filter-field">
+                Hasta
+                <input type="date" name="createdTo" />
+              </label>
+            </details>
+
+            <details class="filter-group" open>
+              <summary>Última actualización</summary>
+              <label class="filter-field">
+                Desde
+                <input type="date" name="updatedFrom" />
+              </label>
+              <label class="filter-field">
+                Hasta
+                <input type="date" name="updatedTo" />
+              </label>
+            </details>
+
+            <details class="filter-group" open>
+              <summary>Visitas</summary>
+              <label class="filter-field">
+                Mínimo
+                <input
+                  type="number"
+                  name="visitsMin"
+                  min="0"
+                  step="1"
+                  inputmode="numeric"
+                  placeholder="0"
+                />
+              </label>
+              <label class="filter-field">
+                Máximo
+                <input
+                  type="number"
+                  name="visitsMax"
+                  min="0"
+                  step="1"
+                  inputmode="numeric"
+                  placeholder="Sin límite"
+                />
+              </label>
+            </details>
+          </form>
+        </aside>
+
+        <section class="browser-results" aria-labelledby="results-title">
+          <form class="browser-search" role="search" id="browser-search-form">
+            <svg
+              class="search-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-4-4"></path>
+            </svg>
+            <input
+              id="browser-search"
+              type="search"
+              placeholder="Buscar por nombre..."
+              aria-label="Buscar juegos por nombre"
+            />
+          </form>
+
+          <div class="results-toolbar">
+            <div>
+              <h2 id="results-title" class="subtitle">Todos los juegos</h2>
+              <p id="results-count" class="results-count" aria-live="polite">
+                Cargando juegos...
+              </p>
+            </div>
+            <label class="sort-control">
+              Ordenar por
+              <select id="sort-games" name="sort">
+                <option value="popular">Más visitados</option>
+                <option value="recent">Más recientes</option>
+                <option value="updated">Actualizados recientemente</option>
+                <option value="title">Nombre</option>
+              </select>
+            </label>
+          </div>
+
+          <div id="games-list" class="browser-games" aria-live="polite">
+            <p class="cuerpo" role="status">Cargando juegos...</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div>
+          <a
+            href="../index.html"
+            class="logo-link"
+            aria-label="Mini N Games - Inicio"
+          >
+            <img
+              src="../img/logo/TransparentBlackLogo.png"
+              alt="Mini N Games"
+              class="logo"
+              style="width: 150px; height: auto"
+            />
+          </a>
+          <p class="leyenda">
+            Tu rincón para descubrir pequeños grandes juegos.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="./sobre-nosotros.html">Sobre nosotros</a>
+          <a href="./contacto.html">Contacto</a>
+          <a href="./privacidad.html">Privacidad</a>
+          <a href="./terminos.html">Términos</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/paths.js"></script>
+    <script src="../js/nav-search.js"></script>
+    <script src="../js/accounts.js"></script>
+    <script src="../js/category-colors.js"></script>
+    <script src="../js/gameBrowser.js"></script>
+  </body>
+</html>
