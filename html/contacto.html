@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Formulario de contacto de demostración de Mini N Games. No se envían ni guardan mensajes."
+    />
+    <title>Contacto | Mini N Games</title>
+    <link rel="stylesheet" href="../CSS/fonts.css" />
+    <link rel="stylesheet" href="../CSS/colors.css" />
+    <link rel="stylesheet" href="../CSS/spacing.css" />
+    <link rel="stylesheet" href="../CSS/index.css" />
+    <link rel="stylesheet" href="../CSS/privacy.css" />
+    <link rel="stylesheet" href="../CSS/contact.css" />
+  </head>
+
+  <body class="primary-background">
+    <header class="site-header highlight-background">
+      <div class="header-content">
+        <a
+          href="../index.html"
+          class="logo-link"
+          aria-label="Mini N Games - Inicio"
+        >
+          <img src="../img/logo/whiteLogo.png" alt="Mini N Games" class="logo" />
+        </a>
+
+        <nav class="primary-nav" aria-label="Navegación principal">
+          <a href="../index.html">Inicio</a>
+          <a href="./gameBrowser.html">Explorar</a>
+          <a href="./favoritos.html">Favoritos</a>
+          <a href="./cafe.html" class="coffee-button">
+            <span aria-hidden="true">☕</span> Invítame a un café
+          </a>
+        </nav>
+
+        <div class="header-actions">
+          <form
+            class="header-search"
+            role="search"
+            action="./gameBrowser.html"
+            method="get"
+          >
+            <svg
+              class="search-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="19"
+              height="19"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-4-4"></path>
+            </svg>
+            <input
+              type="search"
+              name="q"
+              placeholder="Buscar juegos"
+              aria-label="Buscar juegos"
+            />
+          </form>
+          <a href="./account.html" class="account-button">Iniciar Sesión</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="privacy-page contact-page">
+      <article class="privacy-card contact-card" aria-labelledby="contact-title">
+        <p class="privacy-eyebrow">ESTAMOS AL OTRO LADO</p>
+        <h1 id="contact-title" class="title">Contacto</h1>
+        <p class="contact-intro">
+          ¿Tienes una pregunta, una sugerencia o quieres contarnos algo sobre
+          un juego? Déjanos un mensaje.
+        </p>
+
+        <div class="contact-notice" role="note">
+          Este formulario es una demostración visual: al pulsar el botón no se
+          envía ningún correo y los datos no se guardan.
+        </div>
+
+        <div class="contact-form" aria-label="Formulario de contacto de demostración">
+          <label>
+            Tu nombre
+            <input
+              name="name"
+              type="text"
+              autocomplete="name"
+              placeholder="¿Cómo te llamas?"
+            />
+          </label>
+
+          <label>
+            Tu correo electrónico
+            <input
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="nombre@ejemplo.com"
+            />
+          </label>
+
+          <label>
+            Asunto
+            <input
+              name="subject"
+              type="text"
+              placeholder="¿En qué podemos ayudarte?"
+            />
+          </label>
+
+          <label>
+            Mensaje
+            <textarea
+              name="message"
+              rows="6"
+              placeholder="Escribe tu mensaje..."
+            ></textarea>
+          </label>
+
+          <button class="contact-submit" type="button">
+            Enviar mensaje · demo
+          </button>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div>
+          <a
+            href="../index.html"
+            class="logo-link"
+            aria-label="Mini N Games - Inicio"
+          >
+            <img
+              src="../img/logo/TransparentBlackLogo.png"
+              alt="Mini N Games"
+              class="logo"
+              style="width: 150px; height: auto"
+            />
+          </a>
+          <p class="leyenda">
+            Tu rincón para descubrir pequeños grandes juegos.
+          </p>
+        </div>
+        <nav class="footer-links" aria-label="Enlaces del pie de página">
+          <a href="./sobre-nosotros.html">Sobre nosotros</a>
+          <a href="./contacto.html" aria-current="page">Contacto</a>
+          <a href="./privacidad.html">Privacidad</a>
+          <a href="./terminos.html">Términos</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../js/paths.js"></script>
+    <script src="../js/nav-search.js"></script>
+    <script src="../js/accounts.js"></script>
+  </body>
+</html>

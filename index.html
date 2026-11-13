@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Descubre juegos independientes en Mini N Games: explora el catálogo, encuentra nuevos títulos y guarda tus favoritos."
+    />
 
-    <title>Mini n Games</title>
+    <title>Inicio | Mini N Games</title>
 
     <!-- Hojas de estilo proporcionadas -->
     <link rel="stylesheet" href="./CSS/fonts.css" />
@@ -21,22 +25,28 @@
     <header class="site-header highlight-background">
       <div class="header-content">
         <!-- Logo -->
-        <a href="#" class="logo-link" aria-label="Mini N Games - Inicio">
+        <a href="./index.html" class="logo-link" aria-label="Mini N Games - Inicio">
           <img src="./img/logo/whiteLogo.png" alt="Mini N Games" class="logo" />
         </a>
 
         <!-- Navegación principal -->
         <nav class="primary-nav" aria-label="Navegación principal">
           <a href="#" class="active" aria-current="page">Inicio</a>
-          <a href="#">Educativos</a>
-          <a href="#">Puzles</a>
-          <a href="#">Arcade</a>
-          <a href="#">Multijugador</a>
+          <a href="./html/gameBrowser.html">Explorar</a>
+          <a href="./html/favoritos.html">Favoritos</a>
+          <a href="./html/cafe.html" class="coffee-button">
+            <span aria-hidden="true">☕</span> Invítame a un café
+          </a>
         </nav>
 
         <!-- Búsqueda y cuenta -->
         <div class="header-actions">
-          <form class="header-search" role="search" action="#" method="get">
+          <form
+            class="header-search"
+            role="search"
+            action="./html/gameBrowser.html"
+            method="get"
+          >
             <svg
               class="search-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +63,6 @@
               <circle cx="11" cy="11" r="7"></circle>
               <path d="m20 20-4-4"></path>
             </svg>
-
             <input
               type="search"
               name="q"
@@ -61,8 +70,7 @@
               aria-label="Buscar juegos"
             />
           </form>
-
-          <a href="#" class="account-button">Crear cuenta</a>
+          <a href="./html/account.html" class="account-button">Iniciar Sesión</a>
         </div>
       </div>
     </header>
@@ -70,51 +78,44 @@
     <!-- =========================
          HERO / JUEGO DESTACADO
     ========================== -->
+    <main class="home-main">
+      <section class="home-intro" aria-labelledby="home-title">
+        <h1 id="home-title" class="title">Descubre juegos independientes</h1>
+        <p class="cuerpo">
+          Explora el catálogo de Mini N Games y encuentra tu próximo juego
+          favorito.
+        </p>
+      </section>
 
-    <section class="carousel" aria-label="Juegos destacados">
-      <div class="carousel-track" aria-live="polite">
-        <p class="cuerpo" role="status">Cargando juegos destacados...</p>
-      </div>
+      <section class="carousel" aria-label="Juegos destacados">
+        <div class="carousel-track" aria-live="polite">
+          <p class="cuerpo" role="status">Cargando juegos destacados...</p>
+        </div>
 
-      <!-- Botones de navegación -->
-      <button
-        class="carousel-arrow carousel-prev"
-        type="button"
-        aria-label="Juego anterior"
-      >
-        &#10094;
-      </button>
-      <button
-        class="carousel-arrow carousel-next"
-        type="button"
-        aria-label="Juego siguiente"
-      >
-        &#10095;
-      </button>
+        <!-- Botones de navegación -->
+        <button
+          class="carousel-arrow carousel-prev"
+          type="button"
+          aria-label="Juego anterior"
+        >
+          &#10094;
+        </button>
+        <button
+          class="carousel-arrow carousel-next"
+          type="button"
+          aria-label="Juego siguiente"
+        >
+          &#10095;
+        </button>
 
-      <!-- Indicadores -->
-      <div class="carousel-indicators" aria-label="Seleccionar juego"></div>
-    </section>
-
-    <!-- =========================
-         CONTENIDO
-    ========================== -->
-
-    <main>
-      <aside class="advertisement" aria-label="Publicidad">
-        <span>AD</span>
-        <img src="https://picsum.photos/100/60?random=13" alt="" />
-      </aside>
-
-      <p class="intro-text">
-        Descubre pequeños grandes juegos creados por desarrolladores de todo el
-        mundo.
-      </p>
+        <!-- Indicadores -->
+        <div class="carousel-indicators" aria-label="Seleccionar juego"></div>
+      </section>
 
       <section class="games-section">
         <div class="section-header">
           <h2 class="subtitle">Juegos destacados</h2>
-          <a href="#">Ver todos →</a>
+          <a href="./html/gameBrowser.html">Ver todos →</a>
         </div>
 
         <div class="games" id="games-list" aria-live="polite">
@@ -130,7 +131,7 @@
     <footer class="site-footer">
       <div class="footer-content">
         <div>
-          <a href="#" class="logo-link" aria-label="Mini N Games - Inicio">
+          <a href="./index.html" class="logo-link" aria-label="Mini N Games - Inicio">
             <img
               src="./img/logo/TransparentBlackLogo.png"
               alt="Mini N Games"
@@ -145,13 +146,17 @@
         </div>
 
         <div class="footer-links">
-          <a href="#">Sobre nosotros</a>
-          <a href="#">Contacto</a>
-          <a href="#">Privacidad</a>
-          <a href="#">Términos</a>
+          <a href="./html/sobre-nosotros.html">Sobre nosotros</a>
+          <a href="./html/contacto.html">Contacto</a>
+          <a href="./html/privacidad.html">Privacidad</a>
+          <a href="./html/terminos.html">Términos</a>
         </div>
       </div>
     </footer>
+    <script src="./js/paths.js"></script>
+    <script src="./js/nav-search.js"></script>
+    <script src="./js/accounts.js"></script>
+    <script src="./js/category-colors.js"></script>
     <script src="./js/carousel.js"></script>
     <script src="./js/games.js"></script>
   </body>

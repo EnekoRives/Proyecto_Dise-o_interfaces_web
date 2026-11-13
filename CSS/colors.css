@@ -30,7 +30,7 @@
   --color-carousel-shadow: rgba(0, 0, 0, 0.14);
   --color-shadow-carousel: rgba(0, 0, 0, 0.78);
   --color-details-background: #e9e5de;
-  --color-primary-subtle-text: #6b3825;
+  --color-primary-subtle-text: #0c0604;
   --color-carousel-arrow-background: rgba(0, 0, 0, 0.48);
 }
 
@@ -78,6 +78,11 @@ a {
 .primary-nav a:hover,
 .primary-nav a.active {
   color: var(--color-ink);
+}
+
+.coffee-button:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-subtle);
 }
 
 .primary-nav a.active::after {
@@ -181,7 +186,13 @@ a {
 
 .game-category {
   background: var(--color-secondary-subtle);
-  color: var(--color-secondary-text);
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+.carousel-meta .carousel-category-link {
+  color: var(--color-ink);
+  font-weight: 700;
 }
 
 .site-footer {
@@ -222,7 +233,8 @@ a {
   color: var(--color-text);
 }
 
-.carousel-meta span {
+.carousel-meta span,
+.carousel-meta .carousel-category-link {
   background: var(--color-primary-subtle);
   color: var(--color-primary-subtle-text);
 }

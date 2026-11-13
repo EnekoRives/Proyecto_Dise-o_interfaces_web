@@ -7,6 +7,7 @@ const nextButton = carousel.querySelector(".carousel-next");
 const intervalTime = 5000;
 let currentSlide = 0;
 let autoplayInterval;
+let carouselCategoryColors = new Map();
 
 function isGame(value) {
   return (
@@ -39,14 +40,14 @@ function createSlide(game) {
 
   const cover = document.createElement("img");
   cover.className = "carousel-main-image";
-  cover.src = game.cover;
+  cover.src = window.MiniNGamesPaths.asset(game.cover);
   cover.alt = game.coverAlt;
   main.append(cover);
 
   const details = document.createElement("aside");
   details.className = "carousel-details";
 
-  const title = document.createElement("h3");
+  const title = document.createElement("h2");
   title.textContent = game.title;
 
   const description = document.createElement("p");
@@ -57,7 +58,7 @@ function createSlide(game) {
   thumbnails.setAttribute("aria-label", `Imágenes de ${game.title}`);
   game.gallery.slice(0, 4).forEach((item) => {
     const image = document.createElement("img");
-    image.src = item.src;
+    image.src = window.MiniNGamesPaths.asset(item.src);
     image.alt = item.alt;
     image.loading = "lazy";
     thumbnails.append(image);
@@ -69,8 +70,15 @@ function createSlide(game) {
   const meta = document.createElement("div");
   meta.className = "carousel-meta";
 
-  const category = document.createElement("span");
+  const category = document.createElement("a");
+  category.className = "carousel-category-link";
+  category.href = `${window.MiniNGamesPaths.page("gameBrowser.html")}?category=${encodeURIComponent(game.category)}`;
   category.textContent = game.category;
+  window.MiniNGamesCategoryColors.applyBackgroundColor(
+    category,
+    game.category,
+    carouselCategoryColors
+  );
 
   const visits = document.createElement("span");
   visits.textContent = `${new Intl.NumberFormat("es").format(game.totalVisits)} visitas`;
@@ -78,7 +86,7 @@ function createSlide(game) {
 
   const playLink = document.createElement("a");
   playLink.className = "hero-button";
-  playLink.href = `./BlankGame.html?id=${encodeURIComponent(game.id)}`;
+  playLink.href = `${window.MiniNGamesPaths.page("BlankGame.html")}?id=${encodeURIComponent(game.id)}`;
   playLink.setAttribute("aria-label", `Jugar: ${game.title}`);
   playLink.textContent = "Jugar";
 
@@ -131,7 +139,10 @@ function showLoadError(message) {
 
 async function loadCarousel() {
   try {
-    const response = await fetch("./data/games.json");
+    const [response, loadedCategoryColors] = await Promise.all([
+      fetch(window.MiniNGamesPaths.data("games.json")),
+      window.MiniNGamesCategoryColors.load(),
+    ]);
     if (!response.ok) {
       throw new Error(`No se pudo cargar el catálogo (${response.status}).`);
     }
@@ -140,6 +151,8 @@ async function loadCarousel() {
     if (!Array.isArray(games) || !games.every(isGame)) {
       throw new Error("El catálogo de juegos tiene un formato no válido.");
     }
+
+    carouselCategoryColors = loadedCategoryColors;
 
     if (games.length === 0) {
       showLoadError("Todavía no hay juegos en el catálogo.");
@@ -169,7 +182,7 @@ async function loadCarousel() {
   } catch (error) {
     console.error("Error al cargar los juegos destacados:", error);
     showLoadError(
-      "No se pudieron cargar los juegos destacados. Revisa data/games.json y abre la página con Live Server."
+      "No se pudieron cargar los juegos destacados. Revisa data/games.json y data/game_categories.json, y abre la página con Live Server."
     );
   }
 }

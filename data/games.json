@@ -1,42 +1,40 @@
 [
   {
-    "id": "pixel-adventure",
-    "title": "Pixel Adventure",
+    "id": "checkers",
+    "title": "Checkers",
+    "author": "",
     "createdAt": "2024-03-18T10:30:00Z",
     "updatedAt": "2026-08-12T16:45:00Z",
-    "totalVisits": 1847,
-    "description": "Una aventura pixel-art llena de misterios, enemigos y mundos por descubrir.",
-    "category": "Aventura",
-    "cover": "https://picsum.photos/600/400?random=21",
-    "coverAlt": "Personaje pixel-art frente a un paisaje de aventura",
+    "totalVisits": 18,
+    "description": "Conoce Checkers, un clásico juego de damas de la categoría Estrategia.",
+    "category": "Estrategia",
+    "cover": "./img/Games/checkers/checkers.jpg",
+    "coverAlt": "Tablero de damas con piezas en posición inicial",
     "extendedDescription": [
-      "Pixel Adventure es una aventura pixel-art llena de misterios, enemigos y mundos por descubrir. Explora distintos escenarios, encuentra secretos y supera los desafíos que bloquean tu camino.",
-      "Avanza a tu ritmo y presta atención al entorno: algunos caminos y sorpresas solo se descubren explorando cada rincón."
+      "Checkers es el nombre en inglés del juego de damas, un juego de estrategia para dos personas.",
+      "Esta ficha reúne imágenes de una partida y forma parte de la colección de juegos de estrategia de Mini N Games."
     ],
     "gallery": [
       {
-        "src": "https://picsum.photos/seed/pixel-adventure-forest/600/400",
-        "alt": "Bosque pixel-art con un sendero entre árboles"
+        "src": "./img/Games/checkers/checkers.jpg",
+        "alt": "Tablero de damas con piezas en posición inicial"
       },
       {
-        "src": "https://picsum.photos/seed/pixel-adventure-ruins/600/400",
-        "alt": "Ruinas antiguas que se pueden explorar"
-      },
-      {
-        "src": "https://picsum.photos/seed/pixel-adventure-cave/600/400",
-        "alt": "Entrada oscura a una cueva llena de misterios"
+        "src": "./img/Games/checkers/checkers2.jpg",
+        "alt": "Jugadores concentrados en una partida de damas"
       }
     ]
   },
   {
     "id": "space-explorer",
     "title": "Space Explorer",
+    "author": "",
     "createdAt": "2023-11-06T14:15:00Z",
     "updatedAt": "2026-09-03T09:20:00Z",
     "totalVisits": 32,
     "description": "Explora planetas desconocidos y descubre los secretos que esconde el espacio.",
-    "category": "Exploración",
-    "cover": "https://picsum.photos/600/400?random=22",
+    "category": "Arcade",
+    "cover": "./img/Games/space-explorer/space_explorer.jpg",
     "coverAlt": "Nave espacial sobrevolando un planeta desconocido",
     "extendedDescription": [
       "Explora planetas desconocidos y descubre los secretos que esconde el espacio. Cada destino ofrece nuevos paisajes y lugares que investigar.",
@@ -44,51 +42,37 @@
     ],
     "gallery": [
       {
-        "src": "https://picsum.photos/seed/space-explorer-planet/600/400",
+        "src": "./img/Games/space-explorer/space_explorer.jpg",
         "alt": "Superficie de un planeta alienígena"
-      },
-      {
-        "src": "https://picsum.photos/seed/space-explorer-nebula/600/400",
-        "alt": "Nube de colores brillantes en el espacio"
-      },
-      {
-        "src": "https://picsum.photos/seed/space-explorer-station/600/400",
-        "alt": "Estación espacial en órbita alrededor de un planeta"
       }
     ]
   },
   {
-    "id": "dungeon-quest",
-    "title": "Dungeon Quest",
+    "id": "breakout",
+    "title": "Breakout",
+    "author": "",
     "createdAt": "2025-01-22T08:00:00Z",
     "updatedAt": "2026-06-27T18:10:00Z",
     "totalVisits": 20,
-    "description": "Entra en mazmorras peligrosas, consigue objetos y derrota a poderosos enemigos.",
-    "category": "RPG",
-    "cover": "https://picsum.photos/600/400?random=23",
-    "coverAlt": "Entrada a una mazmorra de fantasía custodiada por una criatura",
+    "description": "Rompe bloques y recoge power-ups en esta clásica aventura.",
+    "category": "Arcade",
+    "cover": "./img/Games/breakout/breakout.png",
+    "coverAlt": "Pantalla de juego con bloques y una paleta",
     "extendedDescription": [
-      "Entra en mazmorras peligrosas, consigue objetos y derrota a poderosos enemigos. Cada sala puede esconder tesoros, trampas o nuevos desafíos.",
-      "Prepárate para explorar, reúne recursos y encuentra la mejor forma de superar los peligros que aguardan bajo tierra."
+      "Rompe bloques y recoge power-ups en esta clásica aventura. Cada nivel presenta nuevos desafíos y mecánicas para dominar.",
+      "Controla la paleta para devolver la pelota y romper los bloques. Cada rebote requiere precisión y atención."
     ],
     "gallery": [
       {
-        "src": "https://picsum.photos/seed/dungeon-quest-hall/600/400",
-        "alt": "Pasillo de piedra iluminado por antorchas"
-      },
-      {
-        "src": "https://picsum.photos/seed/dungeon-quest-treasure/600/400",
-        "alt": "Cofre con tesoros en una cámara subterránea"
-      },
-      {
-        "src": "https://picsum.photos/seed/dungeon-quest-monster/600/400",
-        "alt": "Criatura fantástica que protege una sala de la mazmorra"
+        "src": "./img/Games/breakout/breakout.png",
+        "alt": "Pantalla de juego con bloques y una paleta"
       }
     ]
   },
   {
     "id": "chess",
     "title": "Chess",
+    "author": "",
     "createdAt": "2024-07-14T12:00:00Z",
     "updatedAt": "2026-10-02T11:35:00Z",
     "totalVisits": 24,
@@ -97,7 +81,7 @@
     "cover": "./img/Games/chess/Chess_pieces_close_up.jpg",
     "coverAlt": "Tablero de ajedrez con piezas en posición inicial",
     "extendedDescription": [
-      "Juego de ajedrez clásico para desafiar tu mente y estrategia. Pone a prueba tu capacidad de planificación y pensamiento táctico.",
+      "Juego de ajedrez clásico para desafiar tu mente y estrategia. Pon a prueba tu capacidad de planificación y pensamiento táctico.",
       "Domina las reglas del ajedrez y desarrolla tu estilo de juego para vencer a tus oponentes en cada partida."
     ],
     "gallery": [

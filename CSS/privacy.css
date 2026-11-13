@@ -1,0 +1,117 @@
+.privacy-page {
+  max-width: 1000px;
+  padding-top: 52px;
+  padding-bottom: 64px;
+}
+
+.privacy-card {
+  padding: clamp(24px, 5vw, 56px);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-white);
+  box-shadow: 0 8px 24px var(--color-card-shadow);
+}
+
+.privacy-eyebrow {
+  margin: 0 0 10px;
+  color: var(--color-primary);
+  font-family: "Rubik", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.privacy-card h1 {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: clamp(30px, 5vw, 42px);
+  line-height: 1.2;
+}
+
+.privacy-updated {
+  margin: 12px 0 28px;
+  color: var(--color-muted);
+  font-family: "Rubik", sans-serif;
+  font-size: 13px;
+}
+
+.privacy-summary {
+  padding: 18px 20px;
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 10px 10px 0;
+  background: var(--color-primary-subtle);
+}
+
+.privacy-summary p,
+.privacy-section p,
+.privacy-section li {
+  color: var(--color-ink);
+  font-family: "Rubik", sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.privacy-summary p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.privacy-section {
+  margin-top: 30px;
+}
+
+.privacy-section h2 {
+  margin: 0 0 10px;
+  color: var(--color-ink);
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.privacy-section p {
+  margin: 0 0 12px;
+}
+
+.privacy-section ul {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 14px;
+  padding-left: 24px;
+}
+
+.privacy-section code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: var(--color-page-background);
+  font-size: 0.9em;
+}
+
+.privacy-page a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .privacy-page {
+    padding-top: 30px;
+    padding-bottom: 38px;
+  }
+
+  .privacy-card {
+    padding: 24px 20px;
+  }
+
+  .privacy-summary {
+    padding: 15px 16px;
+  }
+
+  .privacy-summary p,
+  .privacy-section p,
+  .privacy-section li {
+    font-size: 14px;
+  }
+
+  .privacy-section h2 {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "arcade",
+    "name": "Arcade",
+    "color": "#ff733b"
+  },
+  {
+    "id": "estrategia",
+    "name": "Estrategia",
+    "color": "#4ecdc4"
+  }
+]

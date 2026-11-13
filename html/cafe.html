@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Formulario de demostración para invitar a Mini N Games a un café. No se envían ni guardan datos."
+    />
+    <title>Invítame a un café | Mini N Games</title>
+    <link rel="stylesheet" href="../CSS/fonts.css" />
+    <link rel="stylesheet" href="../CSS/colors.css" />
+    <link rel="stylesheet" href="../CSS/spacing.css" />
+    <link rel="stylesheet" href="../CSS/index.css" />
+    <link rel="stylesheet" href="../CSS/coffee.css" />
+  </head>
+
+  <body class="primary-background">
+    <header class="site-header highlight-background">
+      <div class="header-content">
+        <a
+          href="../index.html"
+          class="logo-link"
+          aria-label="Mini N Games - Inicio"
+        >
+          <img src="../img/logo/whiteLogo.png" alt="Mini N Games" class="logo" />
+        </a>
+
+        <nav class="primary-nav" aria-label="Navegación principal">
+          <a href="../index.html">Inicio</a>
+          <a href="./gameBrowser.html">Explorar</a>
+          <a href="./favoritos.html">Favoritos</a>
+          <a href="./cafe.html" class="coffee-button" aria-current="page">
+            <span aria-hidden="true">☕</span> Invítame a un café
+          </a>
+        </nav>
+
+        <div class="header-actions">
+          <form
+            class="header-search"
+            role="search"
+            action="./gameBrowser.html"
+            method="get"
+          >
+            <svg
+              class="search-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="19"
+              height="19"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-4-4"></path>
+            </svg>
+            <input
+              type="search"
+              name="q"
+              placeholder="Buscar juegos"
+              aria-label="Buscar juegos"
+            />
+          </form>
+          <a href="./account.html" class="account-button">Iniciar Sesión</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="coffee-page">
+      <section class="coffee-card" aria-labelledby="support-title">
+        <div class="coffee-profile">
+          <img
+            class="coffee-logo"
+            src="../img/logo/TransparentBlackLogo.png"
+            alt="Mini N Games"
+          />
+          <p class="coffee-eyebrow">APOYA A TU CREADOR</p>
+          <p class="coffee-intro">
+            Si disfrutas descubriendo pequeños grandes juegos, puedes invitarme
+            a un café. ¡Gracias por estar aquí!
+          </p>
+        </div>
+
+        <div class="coffee-support-panel">
+          <h1 id="support-title">Invita a Mini N Games a un café</h1>
+          <p class="coffee-step">Elige una cantidad</p>
+
+          <div class="coffee-amounts" role="group" aria-label="Cantidades de ejemplo">
+            <label class="coffee-amount">
+              <input type="radio" name="amount" value="2" checked />
+              <span><span aria-hidden="true">☕</span> 2 €</span>
+            </label>
+            <label class="coffee-amount">
+              <input type="radio" name="amount" value="5" />
+              <span><span aria-hidden="true">☕</span> 5 €</span>
+            </label>
+            <label class="coffee-amount">
+              <input type="radio" name="amount" value="10" />
+              <span><span aria-hidden="true">☕</span> 10 €</span>
+            </label>
+          </div>
+
+          <div class="coffee-form" aria-label="Datos de ejemplo">
+            <label>
+              Tu nombre <span class="coffee-optional">(opcional)</span>
+              <input
+                name="name"
+                type="text"
+                autocomplete="name"
+                placeholder="Nombre"
+              />
+            </label>
+
+            <label>
+              Tu correo electrónico <span class="coffee-optional">(opcional)</span>
+              <input
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="nombre@ejemplo.com"
+              />
+            </label>
+
+            <label class="coffee-message-label">
+              Deja un mensaje <span class="coffee-optional">(opcional)</span>
+              <textarea
+                name="message"
+                rows="3"
+                placeholder="¡Buen trabajo! Sigue así..."
+              ></textarea>
+            </label>
+
+            <button class="coffee-submit" type="button">
+              Invitar a un café · demo
+            </button>
+          </div>
+          <p class="coffee-notice">
+            <span aria-hidden="true">🔒</span> Demo: no hay pagos, y nada de lo
+            que escribas se envía ni se guarda.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div>
+          <a
+            href="../index.html"
+            class="logo-link"
+            aria-label="Mini N Games - Inicio"
+          >
+            <img
+              src="../img/logo/TransparentBlackLogo.png"
+              alt="Mini N Games"
+              class="logo"
+              style="width: 150px; height: auto"
+            />
+          </a>
+          <p class="leyenda">
+            Tu rincón para descubrir pequeños grandes juegos.
+          </p>
+        </div>
+        <nav class="footer-links" aria-label="Enlaces del pie de página">
+          <a href="./sobre-nosotros.html">Sobre nosotros</a>
+          <a href="./contacto.html">Contacto</a>
+          <a href="./privacidad.html">Privacidad</a>
+          <a href="./terminos.html">Términos</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../js/paths.js"></script>
+    <script src="../js/nav-search.js"></script>
+    <script src="../js/accounts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Consulta tu colección de juegos favoritos guardados en Mini N Games."
+    />
+    <title>Favoritos | Mini N Games</title>
+    <link rel="stylesheet" href="../CSS/fonts.css" />
+    <link rel="stylesheet" href="../CSS/colors.css" />
+    <link rel="stylesheet" href="../CSS/spacing.css" />
+    <link rel="stylesheet" href="../CSS/index.css" />
+    <link rel="stylesheet" href="../CSS/favorites.css" />
+  </head>
+
+  <body class="primary-background">
+    <header class="site-header highlight-background">
+      <div class="header-content">
+        <a
+          href="../index.html"
+          class="logo-link"
+          aria-label="Mini N Games - Inicio"
+        >
+          <img src="../img/logo/whiteLogo.png" alt="Mini N Games" class="logo" />
+        </a>
+
+        <nav class="primary-nav" aria-label="Navegación principal">
+          <a href="../index.html">Inicio</a>
+          <a href="./gameBrowser.html">Explorar</a>
+          <a href="./favoritos.html" class="active" aria-current="page"
+            >Favoritos</a
+          >
+          <a href="./cafe.html" class="coffee-button">
+            <span aria-hidden="true">☕</span> Invítame a un café
+          </a>
+        </nav>
+
+        <div class="header-actions">
+          <form
+            class="header-search"
+            role="search"
+            action="./gameBrowser.html"
+            method="get"
+          >
+            <svg
+              class="search-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="19"
+              height="19"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-4-4"></path>
+            </svg>
+            <input
+              type="search"
+              name="q"
+              placeholder="Buscar juegos"
+              aria-label="Buscar juegos"
+            />
+          </form>
+          <a href="./account.html" class="account-button">Iniciar Sesión</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="favorites-page">
+      <section class="favorites-panel" aria-labelledby="favorites-title">
+        <p class="favorites-eyebrow">TU COLECCIÓN</p>
+        <h1 id="favorites-title" class="title">Juegos favoritos</h1>
+
+        <div id="favorites-login-prompt" class="favorites-login-prompt" hidden>
+          <p>Para ver tus juegos favoritos por favor inicie sesion</p>
+          <div class="favorites-actions">
+            <a id="favorites-login-link" class="favorites-action" href="./account.html"
+              >Iniciar sesión</a
+            >
+            <a
+              id="favorites-register-link"
+              class="favorites-action favorites-action-secondary"
+              href="./account.html"
+              >Crear una cuenta</a
+            >
+          </div>
+        </div>
+
+        <div id="favorites-content" hidden>
+          <p id="favorites-status" class="favorites-status cuerpo" role="status">
+            Cargando tus juegos favoritos...
+          </p>
+          <div id="favorites-list" class="favorites-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div>
+          <a
+            href="../index.html"
+            class="logo-link"
+            aria-label="Mini N Games - Inicio"
+          >
+            <img
+              src="../img/logo/TransparentBlackLogo.png"
+              alt="Mini N Games"
+              class="logo"
+              style="width: 150px; height: auto"
+            />
+          </a>
+          <p class="leyenda">
+            Tu rincón para descubrir pequeños grandes juegos.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="./sobre-nosotros.html">Sobre nosotros</a>
+          <a href="./contacto.html">Contacto</a>
+          <a href="./privacidad.html">Privacidad</a>
+          <a href="./terminos.html">Términos</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/paths.js"></script>
+    <script src="../js/nav-search.js"></script>
+    <script src="../js/accounts.js"></script>
+    <script src="../js/category-colors.js"></script>
+    <script src="../js/favorites.js"></script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Inicia sesión o crea una cuenta local para guardar tus juegos favoritos y publicar reseñas en Mini N Games."
+    />
+    <title>Cuenta | Mini N Games</title>
+    <link rel="stylesheet" href="../CSS/fonts.css" />
+    <link rel="stylesheet" href="../CSS/colors.css" />
+    <link rel="stylesheet" href="../CSS/spacing.css" />
+    <link rel="stylesheet" href="../CSS/index.css" />
+    <link rel="stylesheet" href="../CSS/account.css" />
+  </head>
+
+  <body class="primary-background">
+    <header class="site-header highlight-background">
+      <div class="header-content">
+        <a href="../index.html" class="logo-link" aria-label="Mini N Games - Inicio">
+          <img src="../img/logo/whiteLogo.png" alt="Mini N Games" class="logo" />
+        </a>
+        <nav class="primary-nav" aria-label="Navegación principal">
+          <a href="../index.html">Inicio</a>
+          <a href="./gameBrowser.html">Explorar</a>
+          <a href="./favoritos.html">Favoritos</a>
+          <a href="./cafe.html" class="coffee-button">
+            <span aria-hidden="true">☕</span> Invítame a un café
+          </a>
+        </nav>
+        <div class="header-actions">
+          <a href="./account.html" class="account-button">Iniciar Sesión</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="account-page">
+      <section class="account-card" aria-labelledby="account-title">
+        <h1 id="account-title" class="title">Tu cuenta</h1>
+        <p class="account-notice">
+          Prototipo local: la cuenta y las reseñas solo se guardan en este navegador.
+          No uses una contraseña que utilices en otros servicios.
+        </p>
+
+        <div id="account-session" hidden>
+          <p id="account-welcome" class="cuerpo"></p>
+          <button id="account-logout" class="account-submit" type="button">
+            Cerrar sesión
+          </button>
+        </div>
+
+        <div id="account-auth">
+          <div class="account-tabs" role="tablist" aria-label="Acceso a cuenta">
+            <button
+              id="login-tab"
+              class="account-tab active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="login-panel"
+            >
+              Iniciar sesión
+            </button>
+            <button
+              id="register-tab"
+              class="account-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="register-panel"
+            >
+              Crear cuenta
+            </button>
+          </div>
+
+          <form id="register-panel" class="account-form" role="tabpanel" aria-labelledby="register-tab" hidden>
+            <label>
+              Nombre de usuario
+              <input
+                name="username"
+                type="text"
+                minlength="3"
+                maxlength="20"
+                pattern="(?:[A-Za-z0-9_]|-){3,20}"
+                autocomplete="username"
+                required
+              />
+              <span class="field-help">3-20 caracteres: letras, números, guion o guion bajo.</span>
+            </label>
+            <label>
+              Contraseña
+              <input
+                name="password"
+                type="password"
+                minlength="8"
+                autocomplete="new-password"
+                required
+              />
+              <span class="field-help">Como mínimo, 8 caracteres.</span>
+            </label>
+            <label>
+              Repite la contraseña
+              <input
+                name="passwordConfirm"
+                type="password"
+                minlength="8"
+                autocomplete="new-password"
+                required
+              />
+            </label>
+            <button class="account-submit" type="submit">Crear cuenta</button>
+          </form>
+
+          <form id="login-panel" class="account-form" role="tabpanel" aria-labelledby="login-tab">
+            <label>
+              Nombre de usuario
+              <input name="username" type="text" autocomplete="username" required />
+            </label>
+            <label>
+              Contraseña
+              <input
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+              />
+            </label>
+            <button class="account-submit" type="submit">Iniciar sesión</button>
+          </form>
+          <p id="account-status" class="account-status" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/paths.js"></script>
+    <script src="../js/accounts.js"></script>
+  </body>
+</html>
