@@ -2,6 +2,7 @@
   --color-primary: #ff733b;
   --color-primary-hover: #ed622e;
   --color-primary-hover-alt: #e95f2c;
+  --color-primary-text: #b5451c;
   --color-primary-subtle: rgba(255, 115, 59, 0.14);
   --color-primary-focus: rgb(255 115 59 / 12%);
   --color-primary-shadow: rgb(255 115 59 / 14%);
@@ -171,7 +172,7 @@ a {
 }
 
 .section-header a {
-  color: var(--color-primary);
+  color: var(--color-primary-text);
 }
 
 .game-card {
@@ -255,11 +256,21 @@ a {
 }
 
 .carousel-dot {
-  border: 1px solid var(--color-white);
+  border: 0;
   background: var(--color-transparent);
 }
 
 .carousel-dot.active {
+  border: 0;
+  background: var(--color-transparent);
+}
+
+.carousel-dot::before {
+  border: 1px solid var(--color-white);
+  background: var(--color-transparent);
+}
+
+.carousel-dot.active::before {
   border-color: var(--color-primary);
   background: var(--color-primary);
 }

@@ -10,6 +10,7 @@ if (headerSearch) {
   suggestions.hidden = true;
   headerSearch.append(suggestions);
 
+  searchInput.setAttribute("role", "combobox");
   searchInput.setAttribute("aria-autocomplete", "list");
   searchInput.setAttribute("aria-controls", suggestions.id);
   searchInput.setAttribute("aria-expanded", "false");

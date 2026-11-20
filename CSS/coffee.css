@@ -72,7 +72,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
-  margin-bottom: 22px;
+  margin-bottom: 6px;
 }
 
 .coffee-amount {
@@ -130,7 +130,7 @@
   gap: 16px;
 }
 
-.coffee-form label {
+.coffee-form label:not(.coffee-amount) {
   display: grid;
   gap: 7px;
   color: var(--color-ink);
@@ -139,7 +139,7 @@
   font-weight: 600;
 }
 
-.coffee-form input,
+.coffee-form input:not([type="radio"]),
 .coffee-form textarea {
   width: 100%;
   min-height: 46px;
