@@ -121,5 +121,28 @@
         "alt": "Cesta morada atrapando estrellas sobre un cielo nocturno"
       }
     ]
+  },
+  {
+    "id": "arcane-guess",
+    "title": "Arcane Guess",
+    "author": "",
+    "createdAt": "2026-11-25T00:00:00Z",
+    "updatedAt": "2026-11-25T00:00:00Z",
+    "totalVisits": 69,
+    "description": "Adivina la carta oculta descubriendo sus letras, símbolos y nombre.",
+    "category": "Estrategia",
+    "cover": "./img/Games/arcane-guess.svg",
+    "coverAlt": "Carta mágica brillante para el juego Arcane Guess",
+    "gameUrl": "./temp/Arcane_Guess/index.html",
+    "extendedDescription": [
+      "Pon a prueba tus conocimientos de Magic: The Gathering y descubre la carta oculta con intentos de letras, símbolos o su nombre completo.",
+      "Elige la dificultad Normal o Difícil y administra tus intentos para completar el desafío."
+    ],
+    "gallery": [
+      {
+        "src": "./img/Games/arcane-guess.svg",
+        "alt": "Carta mágica brillante para el juego Arcane Guess"
+      }
+    ]
   }
 ]
