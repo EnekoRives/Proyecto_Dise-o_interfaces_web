@@ -98,5 +98,28 @@
         "alt": "Partida de ajedrez en curso"
       }
     ]
+  },
+  {
+    "id": "atrapa-estrellas",
+    "title": "Atrapa estrellas",
+    "author": "",
+    "createdAt": "2026-11-25T00:00:00Z",
+    "updatedAt": "2026-11-25T00:00:00Z",
+    "totalVisits": 1,
+    "description": "Mueve la cesta para atrapar estrellas y consigue la mejor puntuación.",
+    "category": "Arcade",
+    "cover": "./img/Games/atrapa-estrellas/atrapa-estrellas.svg",
+    "coverAlt": "Cesta morada atrapando estrellas sobre un cielo nocturno",
+    "gameUrl": "./temp/index.html",
+    "extendedDescription": [
+      "Atrapa las estrellas que caen moviendo la cesta a izquierda y derecha. Cada estrella que recoges suma un punto.",
+      "Usa las flechas o las teclas A y D; en móvil, mueve la cesta con los botones. Tienes tres vidas."
+    ],
+    "gallery": [
+      {
+        "src": "./img/Games/atrapa-estrellas/atrapa-estrellas.svg",
+        "alt": "Cesta morada atrapando estrellas sobre un cielo nocturno"
+      }
+    ]
   }
 ]

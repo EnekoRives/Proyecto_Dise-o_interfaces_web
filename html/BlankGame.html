@@ -80,6 +80,29 @@
           role="region"
           aria-label="Área de ejecución del juego"
         >
+          <button
+            id="game-fullscreen"
+            class="game-fullscreen-button"
+            type="button"
+            aria-label="Activar pantalla completa"
+            title="Activar pantalla completa"
+            hidden
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5" />
+            </svg>
+          </button>
           <div class="game-unavailable" role="status">
             <h2>Este juego no está disponible</h2>
             <p>Prueba a explorar otros juegos.</p>
@@ -88,6 +111,13 @@
             </a>
           </div>
         </div>
+        <p
+          id="game-fullscreen-status"
+          class="game-fullscreen-status cuerpo"
+          role="status"
+          aria-live="polite"
+          hidden
+        ></p>
       </section>
 
       <section class="game-description-section" aria-labelledby="description-title">

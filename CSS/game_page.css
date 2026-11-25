@@ -25,6 +25,7 @@
 }
 
 .game-player {
+  position: relative;
   display: grid;
   place-items: center;
   width: 100%;
@@ -34,6 +35,72 @@
   border-radius: 16px;
   background: var(--color-black);
   box-shadow: 0 8px 24px var(--color-card-shadow);
+}
+
+.game-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: inherit;
+}
+
+.game-player--embedded {
+  height: min(900px, calc(125vw + 300px));
+  min-height: 640px;
+  max-height: none;
+  aspect-ratio: auto;
+}
+
+.game-player:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  max-height: none;
+  aspect-ratio: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@supports (height: 100dvh) {
+  .game-player:fullscreen {
+    height: 100dvh;
+  }
+}
+
+.game-fullscreen-button {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid #ffffff66;
+  border-radius: 10px;
+  background: #10172be8;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.game-fullscreen-button:hover {
+  background: var(--color-primary);
+  color: var(--color-black);
+}
+
+.game-fullscreen-button:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.game-fullscreen-button[hidden] {
+  display: none;
+}
+
+.game-fullscreen-status {
+  margin: 8px 0 0;
 }
 
 .game-unavailable {
