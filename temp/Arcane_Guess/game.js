@@ -1588,19 +1588,30 @@ correct = visibleFields.some(field =>
 // 21. FORMULARIO DE INTENTOS
 // ==========================================
 
-$('guessForm').addEventListener(
+function submitGuess() {
 
-    'submit',
+    const input = $('guess');
 
-    e => {
+    guess(input.value);
 
-        e.preventDefault();
+    input.value = '';
+}
 
-        guess($('guess').value);
 
-        $('guess').value = '';
-    }
-);
+$('guessForm').addEventListener('submit', e => {
+
+    e.preventDefault();
+
+    submitGuess();
+});
+
+
+$('submit').addEventListener('click', e => {
+
+    e.preventDefault();
+
+    submitGuess();
+});
 
 
 // ==========================================
