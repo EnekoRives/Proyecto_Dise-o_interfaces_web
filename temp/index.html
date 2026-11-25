@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10172b">
+  <title>Atrapa estrellas</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #10172b;
+      color: #f5f7ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px 16px;
+      background:
+        radial-gradient(ellipse at 50% 0%, #25345a 0%, transparent 55%),
+        #10172b;
+    }
+
+    main { width: min(100%, 480px); }
+
+    header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.5rem, 6vw, 2rem);
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle { margin: 4px 0 0; color: #aab5d0; font-size: 0.9rem; }
+
+    .score-card {
+      flex: 0 0 auto;
+      padding: 8px 13px;
+      border: 1px solid #ffffff20;
+      border-radius: 14px;
+      background: #ffffff0b;
+      text-align: right;
+    }
+
+    .score-label {
+      display: block;
+      color: #aab5d0;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    #score { font-size: 1.35rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+    .game-frame {
+      overflow: hidden;
+      border: 1px solid #ffffff24;
+      border-radius: 20px;
+      background: #111a34;
+      box-shadow: 0 24px 70px #0006;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: auto;
+      touch-action: none;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-top: 1px solid #ffffff15;
+      color: #bdc7dd;
+      font-size: 0.82rem;
+    }
+
+    #lives { color: #ff8296; letter-spacing: 0.12em; white-space: nowrap; }
+
+    .controls {
+      display: flex;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .move-button, #start {
+      min-height: 48px;
+      border: 1px solid #ffffff24;
+      border-radius: 14px;
+      color: inherit;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      touch-action: none;
+      user-select: none;
+    }
+
+    .move-button {
+      flex: 1;
+      background: #ffffff0d;
+      font-size: 1.25rem;
+    }
+
+    .move-button:active { background: #ffffff24; transform: translateY(1px); }
+
+    #start {
+      flex: 1.5;
+      border: 0;
+      background: linear-gradient(135deg, #8b7bff, #5c66f5);
+      box-shadow: 0 8px 22px #6763ff40;
+    }
+
+    #start:hover { filter: brightness(1.1); }
+    button:focus-visible { outline: 3px solid #ffe27a; outline-offset: 3px; }
+
+    .help {
+      margin: 12px 0 0;
+      color: #aab5d0;
+      text-align: center;
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 600px) {
+      .move-button { display: none; }
+      .controls { justify-content: center; }
+      #start { flex: 0 1 220px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>Atrapa estrellas</h1>
+        <p class="subtitle">Un juego pequeñito hecho con HTML5</p>
+      </div>
+      <div class="score-card" aria-live="polite">
+        <span class="score-label">Puntos</span>
+        <span id="score">0</span>
+      </div>
+    </header>
+
+    <section class="game-frame" aria-label="Juego Atrapa estrellas">
+      <canvas id="game" width="480" height="600" role="img" aria-label="Atrapa las estrellas que caen con la cesta.">
+        Tu navegador no admite el elemento canvas.
+      </canvas>
+      <div class="toolbar">
+        <span>Recoge las estrellas antes de que caigan</span>
+        <span id="lives" aria-label="Tres vidas">♥ ♥ ♥</span>
+      </div>
+    </section>
+
+    <div class="controls">
+      <button class="move-button" id="left" aria-label="Mover a la izquierda">←</button>
+      <button id="start">Empezar a jugar</button>
+      <button class="move-button" id="right" aria-label="Mover a la derecha">→</button>
+    </div>
+    <p class="help">Muévete con ← → o A / D. En móvil, usa los botones.<br>Tienes tres vidas. ¿Cuántas estrellas puedes atrapar?</p>
+  </main>
+
+  <script>
+    const canvas = document.querySelector("#game");
+    const ctx = canvas.getContext("2d");
+    const scoreDisplay = document.querySelector("#score");
+    const livesDisplay = document.querySelector("#lives");
+    const startButton = document.querySelector("#start");
+
+    const width = canvas.width;
+    const height = canvas.height;
+    const player = { x: width / 2, y: height - 46, width: 94, height: 22, speed: 360 };
+    const keys = new Set();
+    const heldButtons = new Set();
+    const stars = [];
+    const backgroundStars = Array.from({ length: 55 }, (_, i) => ({
+      x: (i * 97 + 31) % width,
+      y: (i * 139 + 17) % height,
+      radius: 1 + (i % 3) * 0.55,
+      alpha: 0.2 + (i % 5) * 0.1
+    }));
+
+    let score = 0;
+    let lives = 3;
+    let state = "ready";
+    let spawnTimer = 0;
+    let previousTime = 0;
+
+    function drawStar(x, y, radius, rotation) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(rotation);
+      ctx.beginPath();
+      for (let point = 0; point < 10; point++) {
+        const distance = point % 2 === 0 ? radius : radius * 0.43;
+        const angle = point * Math.PI / 5 - Math.PI / 2;
+        const px = Math.cos(angle) * distance;
+        const py = Math.sin(angle) * distance;
+        if (point === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      }
+      ctx.closePath();
+      ctx.fillStyle = "#ffe27a";
+      ctx.shadowColor = "#ffc94d";
+      ctx.shadowBlur = 15;
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function draw() {
+      const sky = ctx.createLinearGradient(0, 0, 0, height);
+      sky.addColorStop(0, "#182344");
+      sky.addColorStop(1, "#10172b");
+      ctx.fillStyle = sky;
+      ctx.fillRect(0, 0, width, height);
+
+      for (const dot of backgroundStars) {
+        ctx.globalAlpha = dot.alpha;
+        ctx.fillStyle = "#dce6ff";
+        ctx.beginPath();
+        ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+
+      for (const star of stars) drawStar(star.x, star.y, star.radius, star.rotation);
+
+      const basketX = player.x - player.width / 2;
+      ctx.fillStyle = "#9c8cff";
+      ctx.shadowColor = "#8878ff";
+      ctx.shadowBlur = 18;
+      ctx.beginPath();
+      ctx.roundRect(basketX, player.y, player.width, player.height, [4, 4, 13, 13]);
+      ctx.fill();
+      ctx.shadowBlur = 0;
+      ctx.fillStyle = "#c8c0ff";
+      ctx.fillRect(basketX + 8, player.y + 4, player.width - 16, 3);
+
+      if (state !== "running") {
+        ctx.fillStyle = "#0b1124aa";
+        ctx.fillRect(0, 0, width, height);
+        ctx.textAlign = "center";
+        ctx.fillStyle = "#f5f7ff";
+        ctx.font = "800 32px system-ui, sans-serif";
+        ctx.fillText(state === "over" ? "¡Fin de la partida!" : "¡A por las estrellas!", width / 2, height / 2 - 15);
+        ctx.fillStyle = "#c4cce1";
+        ctx.font = "16px system-ui, sans-serif";
+        ctx.fillText(state === "over" ? `Has atrapado ${score} estrellas` : "Pulsa «Empezar a jugar» para comenzar", width / 2, height / 2 + 22);
+      }
+    }
+
+    function update(delta) {
+      const movingLeft = keys.has("ArrowLeft") || keys.has("a") || keys.has("A") || heldButtons.has("left");
+      const movingRight = keys.has("ArrowRight") || keys.has("d") || keys.has("D") || heldButtons.has("right");
+      if (movingLeft !== movingRight) {
+        player.x += (movingRight ? 1 : -1) * player.speed * delta;
+        player.x = Math.max(player.width / 2, Math.min(width - player.width / 2, player.x));
+      }
+
+      spawnTimer += delta;
+      const spawnInterval = Math.max(0.34, 0.82 - score * 0.008);
+      if (spawnTimer >= spawnInterval) {
+        spawnTimer -= spawnInterval;
+        stars.push({
+          x: 24 + Math.random() * (width - 48),
+          y: -20,
+          radius: 12 + Math.random() * 4,
+          speed: 145 + Math.random() * 55 + score * 3,
+          rotation: Math.random() * Math.PI
+        });
+      }
+
+      for (let i = stars.length - 1; i >= 0; i--) {
+        const star = stars[i];
+        star.y += star.speed * delta;
+        star.rotation += delta * 1.5;
+        const caught = star.y + star.radius >= player.y
+          && star.y - star.radius <= player.y + player.height
+          && star.x >= player.x - player.width / 2 - star.radius
+          && star.x <= player.x + player.width / 2 + star.radius;
+
+        if (caught) {
+          stars.splice(i, 1);
+          score++;
+          scoreDisplay.textContent = score;
+        } else if (star.y - star.radius > height) {
+          stars.splice(i, 1);
+          lives--;
+          livesDisplay.textContent = `${"♥ ".repeat(lives)}${"♡ ".repeat(3 - lives)}`.trim();
+          livesDisplay.setAttribute("aria-label", `${lives} ${lives === 1 ? "vida" : "vidas"}`);
+          if (lives === 0) endGame();
+        }
+      }
+    }
+
+    function frame(time) {
+      if (state !== "running") return;
+      const delta = Math.min((time - previousTime) / 1000 || 0, 0.05);
+      previousTime = time;
+      update(delta);
+      draw();
+      if (state === "running") requestAnimationFrame(frame);
+    }
+
+    function startGame() {
+      score = 0;
+      lives = 3;
+      spawnTimer = 0;
+      stars.length = 0;
+      player.x = width / 2;
+      scoreDisplay.textContent = score;
+      livesDisplay.textContent = "♥ ♥ ♥";
+      livesDisplay.setAttribute("aria-label", "Tres vidas");
+      state = "running";
+      startButton.textContent = "Reiniciar partida";
+      previousTime = 0;
+      draw();
+      requestAnimationFrame(frame);
+    }
+
+    function endGame() {
+      state = "over";
+      startButton.textContent = "Jugar otra vez";
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "F11" && window.parent !== window) {
+        event.preventDefault();
+        window.parent.postMessage("mini-ngames:exit-fullscreen", "*");
+      }
+      if (["ArrowLeft", "ArrowRight"].includes(event.key)) event.preventDefault();
+      keys.add(event.key);
+    });
+    document.addEventListener("keyup", (event) => keys.delete(event.key));
+    window.addEventListener("blur", () => {
+      keys.clear();
+      heldButtons.clear();
+    });
+
+    for (const [id, direction] of [["left", "left"], ["right", "right"]]) {
+      const button = document.querySelector(`#${id}`);
+      button.addEventListener("pointerdown", (event) => {
+        event.preventDefault();
+        heldButtons.add(direction);
+        button.setPointerCapture(event.pointerId);
+      });
+      for (const eventName of ["pointerup", "pointercancel", "lostpointercapture"]) {
+        button.addEventListener(eventName, () => heldButtons.delete(direction));
+      }
+    }
+
+    startButton.addEventListener("click", startGame);
+    draw();
+  </script>
+</body>
+</html>

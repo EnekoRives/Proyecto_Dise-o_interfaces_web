@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#25345a"/>
+      <stop offset="1" stop-color="#10172b"/>
+    </linearGradient>
+    <linearGradient id="basket" x2="1" y2="1">
+      <stop stop-color="#a898ff"/>
+      <stop offset="1" stop-color="#5c66f5"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#sky)"/>
+  <g fill="#dce6ff">
+    <circle cx="82" cy="72" r="3"/>
+    <circle cx="168" cy="132" r="2"/>
+    <circle cx="280" cy="54" r="2.5"/>
+    <circle cx="478" cy="88" r="3"/>
+    <circle cx="558" cy="174" r="2"/>
+    <circle cx="382" cy="156" r="2"/>
+  </g>
+  <g fill="#ffe27a">
+    <path d="m174 54 8 17 19 2-14 13 4 19-17-10-17 10 4-19-14-13 19-2z"/>
+    <path d="m438 136 7 15 17 2-12 11 3 17-15-8-15 8 3-17-12-11 17-2z"/>
+    <path d="m326 207 6 13 15 2-11 10 3 15-13-7-13 7 3-15-11-10 15-2z"/>
+  </g>
+  <path d="M225 266h190l-17 49H242z" fill="url(#basket)"/>
+  <path d="M242 273h156" stroke="#d3cbff" stroke-width="6" stroke-linecap="round"/>
+</svg>

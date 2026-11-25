@@ -1,4 +1,8 @@
 const gameTitle = document.querySelector("#game-title");
+const gamePlayer = document.querySelector(".game-player");
+const fullscreenButton = document.querySelector("#game-fullscreen");
+const fullscreenStatus = document.querySelector("#game-fullscreen-status");
+let gameFrame = null;
 const favoriteAction = document.querySelector("#favorite-action");
 const gameDescription = document.querySelector("#game-description");
 const gameAuthor = document.querySelector("#game-author");
@@ -13,6 +17,65 @@ const reviewFormTitle = document.querySelector("#review-form-title");
 const reviewRatingControl = reviewForm.querySelector(".review-rating-control");
 
 let activeGameId = null;
+
+function updateFullscreenButton() {
+  const isFullscreen = document.fullscreenElement === gamePlayer;
+  const label = isFullscreen
+    ? "Salir de pantalla completa"
+    : "Activar pantalla completa";
+  fullscreenButton.setAttribute("aria-label", label);
+  fullscreenButton.title = label;
+  fullscreenButton.querySelector("path").setAttribute(
+    "d",
+    isFullscreen
+      ? "M3 8h5V3m8 0v5h5M3 16h5v5m8 0v-5h5"
+      : "M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5",
+  );
+}
+
+function showFullscreenError(error) {
+  console.error("No se pudo cambiar el modo de pantalla completa:", error);
+  fullscreenStatus.textContent =
+    "No se pudo cambiar el modo de pantalla completa.";
+  fullscreenStatus.hidden = false;
+}
+
+async function toggleFullscreen() {
+  fullscreenStatus.hidden = true;
+  try {
+    if (document.fullscreenElement === gamePlayer) {
+      await document.exitFullscreen();
+    } else {
+      await gamePlayer.requestFullscreen();
+    }
+  } catch (error) {
+    showFullscreenError(error);
+  }
+}
+
+fullscreenButton.addEventListener("click", toggleFullscreen);
+document.addEventListener("fullscreenchange", () => {
+  updateFullscreenButton();
+  fullscreenStatus.hidden = true;
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "F11" && document.fullscreenElement === gamePlayer) {
+    event.preventDefault();
+    document.exitFullscreen().catch(showFullscreenError);
+  }
+});
+window.addEventListener("message", (event) => {
+  if (
+    !gameFrame ||
+    event.source !== gameFrame.contentWindow ||
+    event.data !== "mini-ngames:exit-fullscreen"
+  ) {
+    return;
+  }
+  if (document.fullscreenElement === gamePlayer) {
+    document.exitFullscreen().catch(showFullscreenError);
+  }
+});
 
 function updateRatingButtons(rating) {
   reviewRatingControl.querySelectorAll(".review-rating-button").forEach((button) => {
@@ -183,6 +246,21 @@ async function loadGame() {
     if (!game) {
       showMessage("Juego no encontrado");
       return;
+    }
+
+    if (typeof game.gameUrl === "string") {
+      const frame = document.createElement("iframe");
+      gameFrame = frame;
+      gamePlayer.classList.add("game-player--embedded");
+      frame.className = "game-frame";
+      frame.src = window.MiniNGamesPaths.asset(game.gameUrl);
+      frame.title = `Juego ${game.title}`;
+      frame.setAttribute("sandbox", "allow-scripts");
+      frame.setAttribute("allowfullscreen", "");
+      gamePlayer.replaceChildren(frame, fullscreenButton);
+      fullscreenButton.hidden =
+        typeof gamePlayer.requestFullscreen !== "function" ||
+        typeof document.exitFullscreen !== "function";
     }
 
     activeGameId = game.id;
