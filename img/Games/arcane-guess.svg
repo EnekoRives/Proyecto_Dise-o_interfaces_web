@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title description">
+  <title id="title">Arcane Guess</title>
+  <desc id="description">Una carta arcana rodeada de destellos sobre un fondo oscuro.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#11172e"/>
+      <stop offset="1" stop-color="#382358"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f8d98b"/>
+      <stop offset=".5" stop-color="#ab78ff"/>
+      <stop offset="1" stop-color="#5a55bd"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="640" height="400" rx="28" fill="url(#background)"/>
+  <circle cx="320" cy="190" r="118" fill="#9370ff" opacity=".16" filter="url(#glow)"/>
+  <g transform="rotate(-8 320 190)">
+    <rect x="235" y="58" width="170" height="264" rx="16" fill="#17172c" stroke="url(#card)" stroke-width="7"/>
+    <rect x="252" y="76" width="136" height="33" rx="7" fill="#ffffff" opacity=".14"/>
+    <path d="M320 132 338 174 383 178 349 208 359 252 320 230 281 252 291 208 257 178 302 174Z" fill="url(#card)" filter="url(#glow)"/>
+    <path d="M267 278h106" stroke="#f4e9ff" stroke-width="7" stroke-linecap="round" opacity=".7"/>
+  </g>
+  <g fill="#f6db9b">
+    <path d="m151 112 6 16 16 6-16 6-6 16-6-16-16-6 16-6z"/>
+    <path d="m486 252 5 13 13 5-13 5-5 13-5-13-13-5 13-5z"/>
+    <circle cx="190" cy="283" r="4"/>
+    <circle cx="461" cy="105" r="5"/>
+  </g>
+  <text x="320" y="366" fill="#f7f1ff" font-family="system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="3" text-anchor="middle">ARCANE GUESS</text>
+</svg>

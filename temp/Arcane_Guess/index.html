@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Arcane Guess | Adivina la carta</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="game.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="brand">
+                <span class="brand-icon" aria-hidden="true">✦</span>
+                <div>
+                    <h1>Arcane Guess</h1>
+                    <p>El desafío de las cartas de Magic</p>
+                </div>
+            </div>
+            <button id="new" class="primary">Nueva partida</button>
+        </header>
+        <main>
+            <section class="intro">
+                <p class="eyebrow">MINIJUEGO · MAGIC: THE GATHERING</p>
+                <h2>Descubre la carta oculta</h2>
+                <p>Adivina letras, números o símbolos del texto, o escribe el nombre completo de la carta.</p>
+            </section>
+            <div class="layout">
+                <section class="panel game-panel" aria-label="Carta e intentos">
+                    <div class="panel-top">
+                        <div>
+                            <label for="mode">Dificultad</label>
+                            <select id="mode">
+                                <option value="normal">Normal</option>
+                                <option value="hard">Difícil</option>
+                            </select>
+                        </div>
+                        <div class="count">
+                            <span>INTENTOS</span>
+                            <strong id="remaining">13 / 13</strong>
+                        </div>
+                    </div>
+                    <div id="meter" class="meter" role="progressbar" aria-label="Intentos restantes" aria-valuemin="0" aria-valuemax="13" aria-valuenow="13"></div>
+                    <div id="card" class="magic-card" aria-label="Carta oculta">
+                        <div class="card-title">
+                            <span id="cardName">—</span>
+                            <span id="mana">?</span>
+                        </div>
+                        <div class="art">
+                            <span aria-hidden="true">✦</span>
+                            <small>ILUSTRACIÓN OCULTA</small>
+                        </div>
+                        <div class="type" id="type">—</div>
+                        <div class="oracle" id="oracle">Cargando carta…</div>
+                        <div class="power" id="power"></div>
+                        <img id="revealed" alt="" hidden>
+                    </div>
+                    <p id="status" role="status" aria-live="polite">Conectando con Scryfall…</p>
+                    <a id="cardLink" target="_blank" rel="noopener noreferrer" hidden>Ver carta en Scryfall ↗</a>
+                </section>
+                <section class="panel controls" aria-label="Controles de juego">
+                    <h3>Tu próximo intento</h3>
+                    <p class="muted">Cada intento válido consume una oportunidad, incluso si aciertas.</p>
+                    <div id="keyboard" class="keyboard" aria-label="Teclado virtual"></div>
+                    <form id="guessForm">
+                        <label for="guess">Carácter o nombre de la carta</label>
+                        <div class="guess-row">
+                            <input id="guess" autocomplete="off" spellcheck="false" placeholder="Ej. A o Lightning Bolt" maxlength="150">
+                            <button class="primary" type="submit" id="submit">Adivinar</button>
+                        </div>
+                    </form>
+                    <div class="history">
+                        <h3>Historial de intentos</h3>
+                        <div id="history" aria-live="polite" class="chips">
+                            <span class="muted">Aún no has hecho ningún intento.</span>
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <h3>Tus estadísticas</h3>
+                        <div class="stat-grid">
+                            <div>
+                                <strong id="wins">0</strong>
+                                <span>Victorias</span>
+                            </div>
+                            <div>
+                                <strong id="losses">0</strong>
+                                <span>Derrotas</span>
+                            </div>
+                            <div>
+                                <strong id="streak">0</strong>
+                                <span>Racha</span>
+                            </div>
+                        </div>
+                    </div>
+                    <details>
+                        <summary>Cómo jugar</summary>
+                        <p>En normal se muestra el tipo y el color. En difícil se ocultan ambos. Los símbolos como {T} o {W} se adivinan como una unidad. Los espacios y la puntuación corriente se muestran desde el inicio. Si descubres el nombre completo, ganas.</p>
+                    </details>
+                </section>
+            </div>
+        </main>
+        <footer>
+            Datos e imágenes: <a href="https://scryfall.com" target="_blank" rel="noopener noreferrer">Scryfall</a>. Proyecto de aficionados no oficial. Magic: The Gathering pertenece a Wizards of the Coast.
+        </footer>
+    </body>
+</html>
